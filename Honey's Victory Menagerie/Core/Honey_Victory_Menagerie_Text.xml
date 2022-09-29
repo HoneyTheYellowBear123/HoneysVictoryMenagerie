@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Ed Beach (Firaxis Games) -->
+<GameData>
+	<LocalizedText>
+
+		<Row Tag="LOC_VICTORY_RICHES_NAME" Language="en_US">
+			<Text>Riches Victory</Text>
+		</Row>
+		<Row Tag="LOC_VICTORY_RICHES_DESCRIPTION" Language="en_US">
+			<Text>Earn and stockpile a set amount of gold over the course of the game. Gold can be earned through any means, including trade, pillaging, clearing barbarian outposts, and deals. Gold spent is NOT counted against you for earnings. Victory values are NOT affected by game speed.</Text>
+		</Row>
+		<Row Tag="LOC_VICTORY_RICHES_EARNINGS_NAME" Language="en_US">
+			<Text>Earnings</Text>
+		</Row>
+		<Row Tag="LOC_VICTORY_RICHES_EARNINGS_DESCRIPTION" Language="en_US">
+			<Text>How much gold must be earned in order to win the game. Set to a low value if you wish to only consider the stockpile option.</Text>
+		</Row>
+		<Row Tag="LOC_VICTORY_RICHES_STOCKPILE_NAME" Language="en_US">
+			<Text>Stockpile</Text>
+		</Row>
+		<Row Tag="LOC_VICTORY_RICHES_STOCKPILE_DESCRIPTION" Language="en_US">
+			<Text>How much gold must be stockpiled in order to win the game. Set to a low value if you wish to only consider the earnings option.</Text>
+		</Row>
+		<Row Tag="LOC_VICTORY_RICHES_TEXT" Language="en_US">
+			<Text>For what greater purpose does civilization serve than to work together to produce value where there was once none? Through your planning, cunning, specialization of labor, and efforts, you have brought riches to this once basic world. </Text>
+		</Row>
+
+
+		
+
+		<Row Tag="LOC_VICTORY_CHARISMA_NAME" Language="en_US">
+			<Text>Charisma Victory</Text>
+		</Row>
+		<Row Tag="LOC_VICTORY_CHARISMA_DESCRIPTION" Language="en_US">
+			<Text>Earn a set amount of great people over the course of the game. Great Prophets and Comandante Generals are not counted towards this goal.</Text>
+		</Row>
+		<Row Tag="LOC_VICTORY_CHARISMA_PEOPLE_REQ_NAME" Language="en_US">
+			<Text>Recruitments</Text>
+		</Row>
+		<Row Tag="LOC_VICTORY_CHARISMA_PEOPLE_REQ_DESCRIPTION" Language="en_US">
+			<Text>How many great people must be earned to achieve this victory. Without mods, there are 188 great people applicable towards this goal.</Text>
+		</Row>
+
+		<Row Tag="LOC_VICTORY_CHARISMA_TEXT" Language="en_US">
+			<Text>It is not the nation that lives on in history, but the people that define it. Among our ranks stand the boldest and brightest, drawn to us by a leader who will surely go down as the most charasmatic of all time.</Text>
+		</Row>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</LocalizedText>
+</GameData>

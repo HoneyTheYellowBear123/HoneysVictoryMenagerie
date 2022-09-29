@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Default" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Default</Configuration>
+    <Name>Honey's Victory Menagerie</Name>
+    <Guid>b86ae181-67b8-4d81-9cee-18bb4a9d45c0</Guid>
+    <ProjectGuid>0b493d42-5913-4997-8efd-1926b9875c77</ProjectGuid>
+    <ModVersion>1</ModVersion>
+    <Teaser>Adds several new victories</Teaser>
+    <Description>Adds several new victories</Description>
+    <Authors>HoneyBear</Authors>
+    <SpecialThanks>
+    </SpecialThanks>
+    <AffectsSavedGames>true</AffectsSavedGames>
+    <SupportsSinglePlayer>true</SupportsSinglePlayer>
+    <SupportsMultiplayer>true</SupportsMultiplayer>
+    <SupportsHotSeat>true</SupportsHotSeat>
+    <CompatibleVersions>1.2,2.0</CompatibleVersions>
+    <AssemblyName>Honey's Victory Menagerie</AssemblyName>
+    <RootNamespace>Honey's Victory Menagerie</RootNamespace>
+    <FrontEndActionData><![CDATA[<FrontEndActions><UpdateIcons id="NewAction"><File>Core/Honey_Victory_Menagerie_Icons.xml</File></UpdateIcons><UpdateText id="NewAction"><File>Core/Honey_Victory_Menagerie_InGame_Text.xml</File><File>Core/Honey_Victory_Menagerie_Text.xml</File></UpdateText><UpdateArt id="NewAction"><File>(Mod Art Dependency File)</File><File>Honey_s_Victory_Menagerie.Art.xml</File></UpdateArt><UpdateDatabase id="NewAction"><File>Core/Honey_Victory_Menagerie_Config.sql</File></UpdateDatabase><UpdateColors id="NewAction"><File>Core/Honey_Victory_Menagerie_Colors.sql</File></UpdateColors></FrontEndActions>]]></FrontEndActionData>
+    <InGameActionData><![CDATA[<InGameActions><AddGameplayScripts id="NewAction"><File>Lua/charisma_victory.lua</File><File>Lua/riches_victory.lua</File></AddGameplayScripts><UpdateArt id="NewAction"><File>(Mod Art Dependency File)</File><File>Honey_s_Victory_Menagerie.Art.xml</File></UpdateArt><UpdateText id="NewAction"><File>Core/Honey_Victory_Menagerie_InGame_Text.xml</File><File>Core/Honey_Victory_Menagerie_Text.xml</File></UpdateText><UpdateDatabase id="NewAction"><File>Core/Honey_Victory_Menagerie_Data.sql</File></UpdateDatabase><UpdateIcons id="NewAction"><File>Core/Honey_Victory_Menagerie_Icons.xml</File></UpdateIcons><UpdateColors id="NewAction"><File>Core/Honey_Victory_Menagerie_Colors.sql</File></UpdateColors><ReplaceUIScript id="BaseGameEndGameOverride"><Properties><LuaContext>EndGameMenu</LuaContext><LoadOrder>1000</LoadOrder><LuaReplace>UI/Base/honey_victory_menagerie_endgame_override.lua</LuaReplace></Properties><Criteria>BASE_OR_XP1_RULESET_VICTORY_MENAGERIE</Criteria></ReplaceUIScript><ReplaceUIScript id="BaseGameWROverride"><Properties><LoadOrder>1000</LoadOrder><LuaContext>WorldRankings</LuaContext><LuaReplace>UI/Base/honey_victory_menagerie_wr_override.lua</LuaReplace></Properties><Criteria>BASE_OR_XP1_RULESET_VICTORY_MENAGERIE</Criteria></ReplaceUIScript><ImportFiles id="BaseGameWRxmlOverride"><Properties><LoadOrder>100</LoadOrder></Properties><Criteria>BASE_OR_XP1_RULESET_VICTORY_MENAGERIE</Criteria><File>UI/Base/WorldRankings.xml</File></ImportFiles><ReplaceUIScript id="XP2EndGameOverride"><Properties><LoadOrder>1001</LoadOrder><LuaContext>EndGameMenu</LuaContext><LuaReplace>UI/XP2/honey_victory_menagerie_endgame_override_xp2.lua</LuaReplace></Properties><Criteria>XP2_RULESET_VICTORY_MENAGERIE</Criteria></ReplaceUIScript><ReplaceUIScript id="XP2WROverride"><Properties><LoadOrder>1001</LoadOrder><LuaContext>WorldRankings</LuaContext><LuaReplace>UI/XP2/honey_victory_menagerie_wr_override_xp2.lua</LuaReplace></Properties><Criteria>XP2_RULESET_VICTORY_MENAGERIE</Criteria></ReplaceUIScript><ImportFiles id="XP2WRxmlOverride"><Properties><LoadOrder>101</LoadOrder></Properties><Criteria>XP2_RULESET_VICTORY_MENAGERIE</Criteria><File>UI/XP2/WorldRankings.xml</File></ImportFiles></InGameActions>]]></InGameActionData>
+    <ActionCriteriaData><![CDATA[<ActionCriteria><Criteria id="BASE_OR_XP1_RULESET_VICTORY_MENAGERIE"><RuleSetInUse><RuleSetInUse>RULESET_STANDARD,RULESET_EXPANSION_1</RuleSetInUse></RuleSetInUse></Criteria><Criteria id="XP2_RULESET_VICTORY_MENAGERIE"><RuleSetInUse><RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse></RuleSetInUse></Criteria></ActionCriteria>]]></ActionCriteriaData>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Default' ">
+    <OutputPath>.</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="Honey_s_Victory_Menagerie.Art.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ArtDefs" />
+    <Folder Include="Core" />
+    <Folder Include="Lua" />
+    <Folder Include="UI\Base" />
+    <Folder Include="UI\XP2" />
+    <Folder Include="XLPs" />
+    <Folder Include="UI" />
+    <Folder Include="Textures" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ArtDefs\UserInterface.artdef">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Core\Honey_Victory_Menagerie_Colors.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Core\Honey_Victory_Menagerie_Config.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Core\Honey_Victory_Menagerie_Data.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Core\Honey_Victory_Menagerie_Icons.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Core\Honey_Victory_Menagerie_InGame_Text.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Core\Honey_Victory_Menagerie_Text.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Lua\charisma_victory.lua">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Lua\riches_victory.lua">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\CharismaProgressBar168.dds">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\CharismaProgressBar168.tex">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\EndGame_BG_Charisma.dds">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\EndGame_BG_Charisma.tex">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\EndGame_BG_Riches.dds">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\EndGame_BG_Riches.tex">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\EndGame_RibbonTile_Charisma.dds">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\EndGame_RibbonTile_Charisma.tex">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\EndGame_RibbonTile_Riches.dds">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\EndGame_RibbonTile_Riches.tex">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\EndGame_Ribbon_Charisma.dds">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\EndGame_Ribbon_Charisma.tex">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\EndGame_Ribbon_Riches.dds">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\EndGame_Ribbon_Riches.tex">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\ICON_VICTORY_CHARISMA_130.dds">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\ICON_VICTORY_CHARISMA_130.tex">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\ICON_VICTORY_CHARISMA_220.dds">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\ICON_VICTORY_CHARISMA_220.tex">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\ICON_VICTORY_CHARISMA_220_2.dds">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\ICON_VICTORY_CHARISMA_64.dds">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\ICON_VICTORY_CHARISMA_64.tex">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\ICON_VICTORY_CHARISMA_80.dds">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\ICON_VICTORY_CHARISMA_80.tex">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\ICON_VICTORY_RICHES_130.dds">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\ICON_VICTORY_RICHES_130.tex">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\ICON_VICTORY_RICHES_220.dds">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\ICON_VICTORY_RICHES_220.tex">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\ICON_VICTORY_RICHES_64.dds">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\ICON_VICTORY_RICHES_64.tex">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\ICON_VICTORY_RICHES_80.dds">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\ICON_VICTORY_RICHES_80.tex">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\RichesProgressBar84.dds">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\RichesProgressBar84.tex">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UI\Base\honey_victory_menagerie_endgame_override.lua">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UI\Base\honey_victory_menagerie_wr_override.lua">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UI\Base\WorldRankings.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UI\XP2\honey_victory_menagerie_endgame_override_xp2.lua">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UI\XP2\honey_victory_menagerie_wr_override_xp2.lua">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UI\XP2\WorldRankings.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="XLPs\Icons.xlp">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="XLPs\UI_Controls.xlp">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="XLPs\UI_Endgame.xlp">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildLocalExtensionPath)Civ6.targets" />
+</Project>

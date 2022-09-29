@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RichesVictoryIcons -->
+<!-- Author: HoneyBear -->
+<!-- DateCreated: 8/22/2022 9:31:31 AM -->
+<GameData>
+	<IconTextureAtlases>
+
+		<Row Name="ICON_ATLAS_VICTORY_RICHES" IconSize="220" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_VICTORY_RICHES_220.dds"/>
+		<Row Name="ICON_ATLAS_VICTORY_RICHES" IconSize="130" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_VICTORY_RICHES_130.dds"/>
+		<Row Name="ICON_ATLAS_VICTORY_RICHES" IconSize="80" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_VICTORY_RICHES_80.dds"/>
+		<Row Name="ICON_ATLAS_VICTORY_RICHES" IconSize="64" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_VICTORY_RICHES_64.dds"/>
+
+		<Row Name="ICON_ATLAS_VICTORY_CHARISMA" IconSize="220" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_VICTORY_CHARISMA_220.dds"/>
+		<Row Name="ICON_ATLAS_VICTORY_CHARISMA" IconSize="130" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_VICTORY_CHARISMA_130.dds"/>
+		<Row Name="ICON_ATLAS_VICTORY_CHARISMA" IconSize="80" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_VICTORY_CHARISMA_80.dds"/>
+		<Row Name="ICON_ATLAS_VICTORY_CHARISMA" IconSize="64" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_VICTORY_CHARISMA_64.dds"/>
+		
+	</IconTextureAtlases>
+
+	<IconDefinitions>
+
+		<Row Name="ICON_VICTORY_RICHES" Atlas="ICON_ATLAS_VICTORY_RICHES" Index="0"/>
+		<Row Name="ICON_VICTORY_CHARISMA" Atlas="ICON_ATLAS_VICTORY_CHARISMA" Index="0"/>
+		
+	</IconDefinitions>
+		
+</GameData>

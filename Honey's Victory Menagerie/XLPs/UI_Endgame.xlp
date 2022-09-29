@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<AssetObjects..XLP>
+	<m_Version>
+		<major>3</major>
+		<minor>0</minor>
+		<build>223</build>
+		<revision>764</revision>
+	</m_Version>
+	<m_ClassName text="UITexture"/>
+	<m_PackageName text="UI/UI_EndGame"/>
+	<m_Entries>
+		<Element>
+			<m_EntryID text="EndGame_RibbonTile_Riches"/>
+			<m_ObjectName text="EndGame_RibbonTile_Riches"/>
+		</Element>
+		<Element>
+			<m_EntryID text="EndGame_Ribbon_Riches"/>
+			<m_ObjectName text="EndGame_Ribbon_Riches"/>
+		</Element>
+		<Element>
+			<m_EntryID text="EndGame_BG_Riches"/>
+			<m_ObjectName text="EndGame_BG_Riches"/>
+		</Element>
+		<Element>
+			<m_EntryID text="EndGame_RibbonTile_Charisma"/>
+			<m_ObjectName text="EndGame_RibbonTile_Charisma"/>
+		</Element>
+		<Element>
+			<m_EntryID text="EndGame_Ribbon_Charisma"/>
+			<m_ObjectName text="EndGame_Ribbon_Charisma"/>
+		</Element>
+		<Element>
+			<m_EntryID text="EndGame_BG_Charisma"/>
+			<m_ObjectName text="EndGame_BG_Charisma"/>
+		</Element>
+	</m_Entries>
+	<m_AllowedPlatforms>
+		<Element>WINDOWS</Element>
+		<Element>LINUX</Element>
+		<Element>MACOS</Element>
+		<Element>IOS</Element>
+	</m_AllowedPlatforms>
+</AssetObjects..XLP>

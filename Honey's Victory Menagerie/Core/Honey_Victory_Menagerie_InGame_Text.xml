@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<GameData>
+	<EnglishText>
+
+		<!--overall tab-->
+		<Row Tag="LOC_VICTORY_RICHES_REQUIREMENT">
+			<Text>Total Earnings: {1_currentvalue}/{2_desiredvalue}</Text>
+		</Row>
+
+		<Row Tag="LOC_WORLD_RANKINGS_OVERVIEW_RICHES_EARNINGS">
+			<Text>[ICON_Bolt] Total Earnings: {1_Earnings}/{2_Earnings_Needed}</Text>
+		</Row>
+		<Row Tag="LOC_WORLD_RANKINGS_OVERVIEW_RICHES_EARNINGS_ACCOMPLISHED">
+			<Text>[Icon_CheckmarkBlue] Total Earnings: {1_Earnings}/{2_Earnings_Needed}</Text>
+		</Row>
+		<Row Tag="LOC_WORLD_RANKINGS_OVERVIEW_RICHES_STOCKPILE">
+			<Text>[ICON_Bolt] Current Stockpile: {1_Stockpile}/{2_Stockpile_Needed}</Text>
+		</Row>
+		<Row Tag="LOC_WORLD_RANKINGS_OVERVIEW_RICHES_STOCKPILE_ACCOMPLISHED">
+			<Text>[Icon_CheckmarkBlue] Current Stockpile: {1_Stockpile}/{2_Stockpile_Needed} </Text>
+		</Row>
+		<Row Tag="LOC_WORLD_RANKINGS_RICHES_TAB">
+			<Text>Riches</Text>
+		</Row>
+
+
+		
+		<Row Tag="LOC_WORLD_RANKINGS_CHARISMA_TAB">
+			<Text>Charisma</Text>
+		</Row>
+		<Row Tag="LOC_WORLD_RANKINGS_OVERVIEW_CHARISMA_RECRUITMENT">
+			<Text>Great People Recruited: {1_Earnings}/{2_Earnings_Needed}</Text>
+		</Row>
+		
+
+		<!--private tab-->
+		<Row Tag="LOC_WORLD_RANKINGS_RICHES_VICTORY">
+			<Text>Riches Victory</Text>
+		</Row>
+		<Row Tag="LOC_WORLD_RANKINGS_RICHES_DETAILS">
+			<Text>To achieve a [COLOR:ResGoldLabelCS]RICHES[ENDCOLOR] victory, you must accomplish 2 major milestones at the same time:</Text>
+		</Row>
+		<Row Tag="LOC_WORLD_RANKINGS_RICHES_EARNINGS_REQUIREMENT">
+			<Text>Earn at least {1_earning_goal} [Icon_Gold] Gold over the course of the entire game.</Text>
+		</Row>
+		<Row Tag="LOC_WORLD_RANKINGS_RICHES_STOCKPILE_REQUIREMENT">
+			<Text>Have at least {1_stockpile_goal} [Icon_Gold] Gold stockpiled in your treasury.</Text>
+		</Row>
+
+		<Row Tag="RICHES_VICTORY_EARNINGS_TOOLTIP">
+			<Text>Earn at least {1_earning_goal} [Icon_Gold] gold over the course of the entire game. This player has earned {2_current_earnings} [Icon_Gold] gold.</Text>
+		</Row>
+		<Row Tag="RICHES_VICTORY_STOCKPILE_TOOLTIP">
+			<Text>Have at least {1_stockpile_goal} [Icon_Gold] gold stockpiled in your treasury. This player currently has {2_current_stockpile} [Icon_Gold] gold. This objective can be lost if gold is removed from the treasury.</Text>
+		</Row>
+
+		
+
+		<Row Tag="LOC_WORLD_RANKINGS_CHARISMA_VICTORY">
+			<Text>Charisma Victory</Text>
+		</Row>
+		<Row Tag="LOC_WORLD_RANKINGS_CHARISMA_DETAILS">
+			<Text>To achieve a [COLOR:DiplomaticLabelCS]CHARISMA[ENDCOLOR] victory, you must recruit {1_recruitment_requirement} [ICON_GreatPerson] Great People over the course of the game. Great Prophets and Comandante Generals are not counted towards this goal, but other modded great people are.</Text>
+		</Row>
+		<Row Tag="CHARISMA_VICTORY_RECRUITMENT_TOOLTIP">
+			<Text>Earn {1_recruitment_goal} [Icon_GreatPerson] great people over the course of the entire game. This player has earned {2_current_recruitment} [Icon_GreatPerson] great people.</Text>
+		</Row>
+		
+		
+		
+		
+		
+
+
+
+	</EnglishText>
+</GameData>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<AssetObjects..XLP>
+	<m_Version>
+		<major>4</major>
+		<minor>0</minor>
+		<build>433</build>
+		<revision>861</revision>
+	</m_Version>
+	<m_ClassName text="UITexture"/>
+	<m_PackageName text="UI/UI_Controls"/>
+	<m_Entries>
+		<Element>
+			<m_EntryID text="RichesProgressBar84"/>
+			<m_ObjectName text="RichesProgressBar84"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CharismaProgressBar168"/>
+			<m_ObjectName text="CharismaProgressBar168"/>
+		</Element>
+	</m_Entries>
+	<m_AllowedPlatforms>
+		<Element>LINUX</Element>
+		<Element>MACOS</Element>
+		<Element>IOS</Element>
+		<Element>WINDOWS</Element>
+	</m_AllowedPlatforms>
+</AssetObjects..XLP>
