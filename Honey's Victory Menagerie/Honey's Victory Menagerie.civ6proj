@@ -6,8 +6,8 @@
     <Guid>b86ae181-67b8-4d81-9cee-18bb4a9d45c0</Guid>
     <ProjectGuid>0b493d42-5913-4997-8efd-1926b9875c77</ProjectGuid>
     <ModVersion>1</ModVersion>
-    <Teaser>Adds several new victories</Teaser>
-    <Description>Adds several new victories</Description>
+    <Teaser>Adds several new victories!</Teaser>
+    <Description>Adds several new victories!</Description>
     <Authors>HoneyBear</Authors>
     <SpecialThanks>
     </SpecialThanks>
@@ -63,6 +63,9 @@
     <Content Include="Lua\charisma_victory.lua">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Lua\joyous_victory.lua">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Lua\riches_victory.lua">
       <SubType>Content</SubType>
     </Content>
@@ -78,6 +81,12 @@
     <Content Include="Textures\EndGame_BG_Charisma.tex">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Textures\EndGame_BG_Joyous.dds">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\EndGame_BG_Joyous.tex">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Textures\EndGame_BG_Riches.dds">
       <SubType>Content</SubType>
     </Content>
@@ -88,6 +97,12 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="Textures\EndGame_RibbonTile_Charisma.tex">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\EndGame_RibbonTile_Joyous.dds">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\EndGame_RibbonTile_Joyous.tex">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Textures\EndGame_RibbonTile_Riches.dds">
@@ -102,10 +117,19 @@
     <Content Include="Textures\EndGame_Ribbon_Charisma.tex">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Textures\EndGame_Ribbon_Joyous.dds">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\EndGame_Ribbon_Joyous.tex">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Textures\EndGame_Ribbon_Riches.dds">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Textures\EndGame_Ribbon_Riches.tex">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\ICON_VICTORY_JOYOUS_130.tex">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Textures\ICON_VICTORY_CHARISMA_130.dds">
@@ -120,9 +144,6 @@
     <Content Include="Textures\ICON_VICTORY_CHARISMA_220.tex">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Textures\ICON_VICTORY_CHARISMA_220_2.dds">
-      <SubType>Content</SubType>
-    </Content>
     <Content Include="Textures\ICON_VICTORY_CHARISMA_64.dds">
       <SubType>Content</SubType>
     </Content>
@@ -133,6 +154,24 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="Textures\ICON_VICTORY_CHARISMA_80.tex">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\ICON_VICTORY_JOYOUS_130.dds">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\ICON_VICTORY_JOYOUS_220.tex">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\ICON_VICTORY_JOYOUS_64.dds">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\ICON_VICTORY_JOYOUS_64.tex">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\ICON_VICTORY_JOYOUS_80.dds">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\ICON_VICTORY_JOYOUS_80.tex">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Textures\ICON_VICTORY_RICHES_130.dds">
@@ -157,6 +196,15 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="Textures\ICON_VICTORY_RICHES_80.tex">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\ICON_VICTORY_JOYOUS_220.dds">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\JoyousProgressBar84.dds">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\JoyousProgressBar84.tex">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Textures\RichesProgressBar84.dds">

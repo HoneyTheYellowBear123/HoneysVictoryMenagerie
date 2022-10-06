@@ -41,6 +41,23 @@
 			<m_EntryID text="ICON_VICTORY_CHARISMA_64"/>
 			<m_ObjectName text="ICON_VICTORY_CHARISMA_64"/>
 		</Element>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_VICTORY_JOYOUS_220"/>
+			<m_ObjectName text="ICON_VICTORY_JOYOUS_220"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_VICTORY_JOYOUS_130"/>
+			<m_ObjectName text="ICON_VICTORY_JOYOUS_130"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_VICTORY_JOYOUS_80"/>
+			<m_ObjectName text="ICON_VICTORY_JOYOUS_80"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_VICTORY_JOYOUS_64"/>
+			<m_ObjectName text="ICON_VICTORY_JOYOUS_64"/>
+		</Element>
 	</m_Entries>
 	<m_AllowedPlatforms>
 		<Element>WINDOWS</Element>

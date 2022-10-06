@@ -33,6 +33,18 @@
 			<m_EntryID text="EndGame_BG_Charisma"/>
 			<m_ObjectName text="EndGame_BG_Charisma"/>
 		</Element>
+		<Element>
+			<m_EntryID text="EndGame_RibbonTile_Joyous"/>
+			<m_ObjectName text="EndGame_RibbonTile_Joyous"/>
+		</Element>
+		<Element>
+			<m_EntryID text="EndGame_Ribbon_Joyous"/>
+			<m_ObjectName text="EndGame_Ribbon_Joyous"/>
+		</Element>
+		<Element>
+			<m_EntryID text="EndGame_BG_Joyous"/>
+			<m_ObjectName text="EndGame_BG_Joyous"/>
+		</Element>
 	</m_Entries>
 	<m_AllowedPlatforms>
 		<Element>WINDOWS</Element>

@@ -44,6 +44,31 @@
 		<Row Tag="LOC_VICTORY_CHARISMA_TEXT" Language="en_US">
 			<Text>It is not the nation that lives on in history, but the people that define it. Among our ranks stand the boldest and brightest, drawn to us by a leader who will surely go down as the most charasmatic of all time.</Text>
 		</Row>
+
+
+
+		<Row Tag="LOC_VICTORY_JOYOUS_NAME" Language="en_US">
+			<Text>Joyous Victory</Text>
+		</Row>
+		<Row Tag="LOC_VICTORY_JOYOUS_DESCRIPTION" Language="en_US">
+			<Text>Have the highest amenity to population ratio for both a set number of turns, and as a continous streak. Victory values are NOT affected by game speed.</Text>
+		</Row>
+		<Row Tag="LOC_VICTORY_JOYOUS_TOTAL_NAME" Language="en_US">
+			<Text>Total</Text>
+		</Row>
+		<Row Tag="LOC_VICTORY_JOYOUS_TOTAL_DESCRIPTION" Language="en_US">
+			<Text>How many total turns you must have the highest amenity/population ratio in your empire. Set to a low value if you wish to only consider the streak option.</Text>
+		</Row>
+		<Row Tag="LOC_VICTORY_JOYOUS_CONCURRENT_NAME" Language="en_US">
+			<Text>Streak</Text>
+		</Row>
+		<Row Tag="LOC_VICTORY_JOYOUS_CONCURRENT_DESCRIPTION" Language="en_US">
+			<Text>How many turns in a row you must have the highest amenity/population ratio in your empire. Set to a low value if you wish to only consider the total option.</Text>
+		</Row>
+
+		<Row Tag="LOC_VICTORY_JOYOUS_TEXT" Language="en_US">
+			<Text>A nation is not its culture, nor its military, nor its accomplishments. A nation is its people, and you have ensured that ours are the happiest in the world, regardless of what others may have achieved at the neglect of their own citizens. </Text>
+		</Row>
 		
 		
 		
