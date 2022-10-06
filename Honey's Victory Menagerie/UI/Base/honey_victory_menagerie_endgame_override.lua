@@ -171,6 +171,19 @@ Styles = {
 	SndStop = "Stop_Cinematic_Endgame_Culture", --good enough
 	Color = "COLOR_VICTORY_CHARISMA",
 	},
+
+
+
+	["VICTORY_JOYOUS"] = {
+	RibbonIcon = "ICON_VICTORY_JOYOUS",
+	Ribbon = "EndGame_Ribbon_Joyous",
+	RibbonTile = "EndGame_RibbonTile_Joyous",
+	Background = "EndGame_BG_Joyous", 
+	Movie = "Time.bk2", --good enough
+	SndStart = "Play_Cinematic_Endgame_Time", --good enough
+	SndStop = "Stop_Cinematic_Endgame_Time", --good enough
+	Color = "COLOR_VICTORY_JOYOUS",
+	},
 };
 
 

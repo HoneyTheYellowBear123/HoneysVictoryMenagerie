@@ -30,9 +30,28 @@
 			<Text>Charisma</Text>
 		</Row>
 		<Row Tag="LOC_WORLD_RANKINGS_OVERVIEW_CHARISMA_RECRUITMENT">
-			<Text>Great People Recruited: {1_Earnings}/{2_Earnings_Needed}</Text>
+			<Text>Great People Recruited: {1_recruitment}/{2_recruitment_Needed}</Text>
 		</Row>
-		
+
+
+
+
+		<Row Tag="LOC_WORLD_RANKINGS_JOYOUS_TAB">
+			<Text>JOYOUS</Text>
+		</Row>
+		<Row Tag="LOC_WORLD_RANKINGS_OVERVIEW_JOYOUS_TOTAL">
+			<Text>[ICON_Bolt] Turns Happiest: {1_turns}/{2_turns_Needed}</Text>
+		</Row>
+		<Row Tag="LOC_WORLD_RANKINGS_OVERVIEW_JOYOUS_TOTAL_ACCOMPLISHED">
+			<Text>[Icon_CheckmarkBlue] Turns Happiest: {1_turns}/{2_turns_Needed}</Text>
+		</Row>
+		<Row Tag="LOC_WORLD_RANKINGS_OVERVIEW_JOYOUS_CONCURRENT">
+			<Text>[ICON_Bolt] Current Streak: {1_turns}/{2_turns_Needed}</Text>
+		</Row>
+		<Row Tag="LOC_WORLD_RANKINGS_OVERVIEW_JOYOUS_CONCURRENT_ACCOMPLISHED">
+			<Text>[Icon_CheckmarkBlue] Current Streak: {1_turns}/{2_turns_Needed}</Text>
+		</Row>
+
 
 		<!--private tab-->
 		<Row Tag="LOC_WORLD_RANKINGS_RICHES_VICTORY">
@@ -66,7 +85,30 @@
 		<Row Tag="CHARISMA_VICTORY_RECRUITMENT_TOOLTIP">
 			<Text>Earn {1_recruitment_goal} [Icon_GreatPerson] great people over the course of the entire game. This player has earned {2_current_recruitment} [Icon_GreatPerson] great people.</Text>
 		</Row>
-		
+
+
+
+
+
+		<Row Tag="LOC_WORLD_RANKINGS_JOYOUS_VICTORY">
+			<Text>Joyous Victory</Text>
+		</Row>
+		<Row Tag="LOC_WORLD_RANKINGS_JOYOUS_DETAILS">
+			<Text>To achieve a [COLOR:ResJoyousLabelCS]JOYOUS[ENDCOLOR] victory, you must accomplish 2 major milestones at the same time:</Text>
+		</Row>
+		<Row Tag="LOC_WORLD_RANKINGS_JOYOUS_TOTAL_REQUIREMENT">
+			<Text>Have the highest [Icon_Amenities] amenity per [Icon_Citizen] citizen ratio in your empire for a total of {1_total_turns_needed} turns.</Text>
+		</Row>
+		<Row Tag="LOC_WORLD_RANKINGS_JOYOUS_CONCURRENT_REQUIREMENT">
+			<Text>Have the highest [Icon_Amenities] amenity per [Icon_Citizen] citizen ratio in your empire for {1_concurrent_turns_needed} turns in a row. This streak will be reset every time a different civilization has a higher ratio.</Text>
+		</Row>
+
+		<Row Tag="JOYOUS_VICTORY_TOTAL_TOOLTIP">
+			<Text>Have the highest [Icon_Amenities] amenity per [Icon_Citizen] citizen ratio for a total of {1_total_turns_needed} turns. This player has accomplished this for a total of {2_total_current} turns.</Text>
+		</Row>
+		<Row Tag="JOYOUS_VICTORY_CONCURRENT_TOOLTIP">
+			<Text>Have the highest [Icon_Amenities] amenity per [Icon_Citizen] citizen ratio for a total of {1_concurrent_turns_needed} turns in a row. This player's current streak is {2_concurrent_current} turns.</Text>
+		</Row>
 		
 		
 		

@@ -51,19 +51,19 @@
 			<Text>Joyous Victory</Text>
 		</Row>
 		<Row Tag="LOC_VICTORY_JOYOUS_DESCRIPTION" Language="en_US">
-			<Text>Have the highest amenity to population ratio for both a set number of turns, and as a continous streak. Victory values are NOT affected by game speed.</Text>
+			<Text>Have the highest [Icon_Amenities] amenity to [Icon_Citizen] population ratio for both a set number of turns, and as a continous streak. Victory values are NOT affected by game speed.</Text>
 		</Row>
 		<Row Tag="LOC_VICTORY_JOYOUS_TOTAL_NAME" Language="en_US">
 			<Text>Total</Text>
 		</Row>
 		<Row Tag="LOC_VICTORY_JOYOUS_TOTAL_DESCRIPTION" Language="en_US">
-			<Text>How many total turns you must have the highest amenity/population ratio in your empire. Set to a low value if you wish to only consider the streak option.</Text>
+			<Text>How many total turns you must have the highest [Icon_Amenities] amenity to [Icon_Citizen] population ratio in your empire. Set to a low value if you wish to only consider the streak option.</Text>
 		</Row>
 		<Row Tag="LOC_VICTORY_JOYOUS_CONCURRENT_NAME" Language="en_US">
 			<Text>Streak</Text>
 		</Row>
 		<Row Tag="LOC_VICTORY_JOYOUS_CONCURRENT_DESCRIPTION" Language="en_US">
-			<Text>How many turns in a row you must have the highest amenity/population ratio in your empire. Set to a low value if you wish to only consider the total option.</Text>
+			<Text>How many turns in a row you must have the highest [Icon_Amenities] amenity to [Icon_Citizen] population ratio in your empire. Set to a low value if you wish to only consider the total option.</Text>
 		</Row>
 
 		<Row Tag="LOC_VICTORY_JOYOUS_TEXT" Language="en_US">
