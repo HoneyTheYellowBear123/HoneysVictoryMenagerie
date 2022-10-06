@@ -37,7 +37,7 @@
 
 
 		<Row Tag="LOC_WORLD_RANKINGS_JOYOUS_TAB">
-			<Text>JOYOUS</Text>
+			<Text>Joyous</Text>
 		</Row>
 		<Row Tag="LOC_WORLD_RANKINGS_OVERVIEW_JOYOUS_TOTAL">
 			<Text>[ICON_Bolt] Turns Happiest: {1_turns}/{2_turns_Needed}</Text>
@@ -94,7 +94,7 @@
 			<Text>Joyous Victory</Text>
 		</Row>
 		<Row Tag="LOC_WORLD_RANKINGS_JOYOUS_DETAILS">
-			<Text>To achieve a [COLOR:ResJoyousLabelCS]JOYOUS[ENDCOLOR] victory, you must accomplish 2 major milestones at the same time:</Text>
+			<Text>To achieve a [COLOR:ResCultureLabelCS]JOYOUS[ENDCOLOR] victory, you must accomplish 2 major milestones at the same time:</Text>
 		</Row>
 		<Row Tag="LOC_WORLD_RANKINGS_JOYOUS_TOTAL_REQUIREMENT">
 			<Text>Have the highest [Icon_Amenities] amenity per [Icon_Citizen] citizen ratio in your empire for a total of {1_total_turns_needed} turns.</Text>
