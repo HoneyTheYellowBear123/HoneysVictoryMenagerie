@@ -228,6 +228,26 @@ g_victoryData.VICTORY_DIPLOMATIC = {
 
 
 --MOD/
+
+function GetRichesVictoryAdditionalSummary(pPlayer:table)
+	-- Add or override in expansions
+	return "";
+end
+
+function GetCharismaVictoryAdditionalSummary(pPlayer:table)
+	-- Add or override in expansions
+	return "";
+end
+		 
+function GetJoyousVictoryAdditionalSummary(pPlayer:table)
+	-- Add or override in expansions
+	return "";
+end
+
+
+
+
+
 g_victoryData.VICTORY_RICHES = {
 	Primary = {
 		GetText = function(p) 
@@ -329,7 +349,7 @@ g_victoryData.VICTORY_CHARISMA = {
 }
 
 
-g_VictoryData.VICTORY_JOYOUS = {
+g_victoryData.VICTORY_JOYOUS = {
 		Primary = {
 			GetText = function(p) 
 				local total = joyousVictoryTotalNecessary
@@ -401,22 +421,7 @@ g_VictoryData.VICTORY_JOYOUS = {
 
 --MOD\
 
---MOD/
-function GetRichesVictoryAdditionalSummary(pPlayer:table)
-	-- Add or override in expansions
-	return "";
-end
 
-function GetCharismaVictoryAdditionalSummary(pPlayer:table)
-	-- Add or override in expansions
-	return "";
-end
-
-function GetJoyousVictoryAdditionalSummary(pPlayer:table)
-	-- Add or override in expansions
-	return "";
-end
---MOD\
 
 -- ===========================================================================
 -- Overrides
@@ -490,7 +495,7 @@ function ViewOverall()
 	
 	for row in GameInfo.Victories() do
 		local victoryType:string = row.VictoryType;
-		if IsCustomVictoryType(victoryType) and Game.IsVictoryEnabled(victoryType) and (not (victoryType == "VICTORY_RICHES")) and (not (victoryType == "VICTORY_CHARISMA") and (not (victoryType == "VICTORY_JOYOUS")) ) then		
+		if IsCustomVictoryType(victoryType) and Game.IsVictoryEnabled(victoryType) and (not (victoryType == "VICTORY_RICHES")) and (not (victoryType == "VICTORY_CHARISMA")) and (not (victoryType == "VICTORY_JOYOUS")) then		
 			PopulateOverallInstance(m_OverallIM:GetInstance(), victoryType);
 		end
 	end
@@ -1089,7 +1094,7 @@ function PopulateTabs()
 		if IsCustomVictoryType(victoryType) and Game.IsVictoryEnabled(victoryType) then
             if (victoryType == "VICTORY_DIPLOMATIC") then
                 AddTab(Locale.Lookup("LOC_TOOLTIP_DIPLOMACY_CONGRESS_BUTTON"), function() ViewDiplomatic(victoryType); end);
-            elseif ( (not (victoryType == "VICTORY_RICHES")) and (not (victoryType == "VICTORY_CHARISMA"))  ) then				
+            elseif ( (not (victoryType == "VICTORY_RICHES")) and (not (victoryType == "VICTORY_CHARISMA")) and (not (victoryType == "VICTORY_JOYOUS"))  ) then				
 				AddTab(Locale.Lookup(row.Name), function() ViewGeneric(victoryType); end);
             end
 		end
@@ -1728,7 +1733,7 @@ function ViewJoyous()
 	ResetState(ViewJoyous);
 	Controls.JoyousView:SetHide(false);
 
-	ChangeActiveHeader("VICTORY_Joyous", m_JoyousHeaderIM, Controls.JoyousViewHeader);
+	ChangeActiveHeader("VICTORY_JOYOUS", m_JoyousHeaderIM, Controls.JoyousViewHeader);
 	PopulateGenericHeader(RealizeJoyousStackSize, JOYOUS_TITLE, "", JOYOUS_DETAILS, JOYOUS_ICON);
 	
 	local totalCost:number = 0;

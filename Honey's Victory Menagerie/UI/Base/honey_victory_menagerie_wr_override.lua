@@ -3181,7 +3181,7 @@ function ViewJoyous()
 	ResetState(ViewJoyous);
 	Controls.JoyousView:SetHide(false);
 
-	ChangeActiveHeader("VICTORY_Joyous", m_JoyousHeaderIM, Controls.JoyousViewHeader);
+	ChangeActiveHeader("VICTORY_JOYOUS", m_JoyousHeaderIM, Controls.JoyousViewHeader);
 	PopulateGenericHeader(RealizeJoyousStackSize, JOYOUS_TITLE, "", JOYOUS_DETAILS, JOYOUS_ICON);
 	
 	local totalCost:number = 0;
