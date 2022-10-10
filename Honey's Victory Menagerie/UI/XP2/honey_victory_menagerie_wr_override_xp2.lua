@@ -490,7 +490,7 @@ function ViewOverall()
 	
 	for row in GameInfo.Victories() do
 		local victoryType:string = row.VictoryType;
-		if IsCustomVictoryType(victoryType) and Game.IsVictoryEnabled(victoryType) and (not (victoryType == "VICTORY_RICHES")) and (not (victoryType == "VICTORY_CHARISMA") and (not (victoryType == "VICTORY_JOYOUS") ) then		
+		if IsCustomVictoryType(victoryType) and Game.IsVictoryEnabled(victoryType) and (not (victoryType == "VICTORY_RICHES")) and (not (victoryType == "VICTORY_CHARISMA") and (not (victoryType == "VICTORY_JOYOUS")) ) then		
 			PopulateOverallInstance(m_OverallIM:GetInstance(), victoryType);
 		end
 	end
