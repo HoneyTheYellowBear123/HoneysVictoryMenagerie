@@ -35,6 +35,10 @@ local richesVictoryEnabled = GameConfiguration.GetValue("CONFIG_GOLD_VIC");
 
 local victoryRecruitmentAmount = GameConfiguration.GetValue("CONFIG_CHARISMA_VIC_PEOPLE_REQ");
 local charismaVictoryEnabled = GameConfiguration.GetValue("CONFIG_CHARISMA_VIC");
+
+local joyousVictoryEnabled = GameConfiguration.GetValue("CONFIG_JOYOUS_VIC")
+local joyousVictoryTotalNecessary = GameConfiguration.GetValue("CONFIG_JOYOUS_VIC_TOTAL")
+local joyousVictoryConcurrentNecessary = GameConfiguration.GetValue("CONFIG_JOYOUS_VIC_CONCURRENT")
 --MOD\
 
 
@@ -148,6 +152,7 @@ local SCIENCE_REQUIREMENTS:table = {
 --MOD/
 TAB_RICHES = Locale.Lookup("LOC_WORLD_RANKINGS_RICHES_TAB");
 TAB_CHARISMA = Locale.Lookup("LOC_WORLD_RANKINGS_CHARISMA_TAB");
+TAB_JOYOUS = Locale.Lookup("LOC_WORLD_RANKINGS_JOYOUS_TAB");
 --MOD\
 
 --MOD/
@@ -162,6 +167,14 @@ local RICHES_REQUIREMENTS:table = {
 local CHARISMA_ICON:string = "ICON_VICTORY_CHARISMA";
 local CHARISMA_TITLE:string = Locale.Lookup("LOC_WORLD_RANKINGS_CHARISMA_VICTORY");
 local CHARISMA_DETAILS:string = Locale.Lookup("LOC_WORLD_RANKINGS_CHARISMA_DETAILS",victoryRecruitmentAmount);
+
+local JOYOUS_ICON:string = "ICON_VICTORY_JOYOUS";
+local JOYOUS_TITLE:string = Locale.Lookup("LOC_WORLD_RANKINGS_JOYOUS_VICTORY");
+local JOYOUS_DETAILS:string = Locale.Lookup("LOC_WORLD_RANKINGS_JOYOUS_DETAILS");
+local JOYOUS_REQUIREMENTS:table = {
+	Locale.Lookup("LOC_WORLD_RANKINGS_JOYOUS_TOTAL_REQUIREMENT",joyousVictoryTotalNecessary),
+	Locale.Lookup("LOC_WORLD_RANKINGS_JOYOUS_CONCURRENT_REQUIREMENT",joyousVictoryConcurrentNecessary)
+};
 --MOD\
 
 --MOD/
@@ -172,6 +185,10 @@ local m_RichesTeamIM:table = InstanceManager:new("RichesTeamInstance", "ButtonFr
 local m_CharismaHeaderIM	:table = InstanceManager:new("CharismaHeaderInstance", "HeaderTop", Controls.CharismaViewHeader);
 local m_CharismaIM:table = InstanceManager:new("CharismaInstance", "ButtonBG", Controls.CharismaViewStack);
 local m_CharismaTeamIM:table = InstanceManager:new("CharismaTeamInstance", "ButtonFrame", Controls.CharismaViewStack);
+
+local m_JoyousHeaderIM	:table = InstanceManager:new("JoyousHeaderInstance", "HeaderTop", Controls.JoyousViewHeader);
+local m_JoyousIM:table = InstanceManager:new("JoyousInstance", "ButtonBG", Controls.JoyousViewStack);
+local m_JoyousTeamIM:table = InstanceManager:new("JoyousTeamInstance", "ButtonFrame", Controls.JoyousViewStack);
 --MOD\
 
 
@@ -311,6 +328,77 @@ g_victoryData.VICTORY_CHARISMA = {
 	AdditionalSummary = function(p) return GetCharismaVictoryAdditionalSummary(p) end
 }
 
+
+g_VictoryData.VICTORY_JOYOUS = {
+		Primary = {
+			GetText = function(p) 
+				local total = joyousVictoryTotalNecessary
+				local current = 0;
+				local returntext = "";
+				if (p:GetProperty("JoyousVictoryTotalTurnsHappiest")) then
+					current = p:GetProperty("JoyousVictoryTotalTurnsHappiest");
+				end
+
+				returntext = Locale.Lookup("LOC_WORLD_RANKINGS_OVERVIEW_JOYOUS_TOTAL", current, total);
+
+				if (current > total) then 
+					--current = total;
+
+					returntext = Locale.Lookup("LOC_WORLD_RANKINGS_OVERVIEW_JOYOUS_TOTAL_ACCOMPLISHED", current, total); 
+				end
+
+				return returntext;
+			end,
+
+			GetScore = function(p) 
+				local current = 0;
+				local total = victoryEarningsAmount
+				if (p:GetProperty("JoyousVictoryTotalTurnsHappiest")) then
+					current = p:GetProperty("JoyousVictoryTotalTurnsHappiest");
+				end
+
+				if (current > total) then --once the condition has been met, excess does not give you an advantage.
+					current = total;
+				end
+			return current; end
+		},
+
+		
+		Secondary = {
+			GetText = function(p) 
+				local total = joyousVictoryConcurrentNecessary
+				local current = 0;
+				local returntext = "";
+				if (p:GetProperty("JoyousVictoryTotalTurnsConcurrent")) then
+					current = p:GetProperty("JoyousVictoryTotalTurnsConcurrent");
+				end
+
+				returntext = Locale.Lookup("LOC_WORLD_RANKINGS_OVERVIEW_JOYOUS_CONCURRENT", current, total);
+
+				if (current > total) then --once the condition has been met, stop displaying bigger numbers and give a cute checkmark
+					--current = total;
+
+					returntext = Locale.Lookup("LOC_WORLD_RANKINGS_OVERVIEW_JOYOUS_CONCURRENT_ACCOMPLISHED", current, total); 
+				end
+
+				return returntext;
+			end,
+
+			GetScore = function(p) 
+				local current = 0;
+				local total = victoryStockpileAmount
+				if (p:GetProperty("JoyousVictoryTotalTurnsConcurrent")) then
+					current = p:GetProperty("JoyousVictoryTotalTurnsConcurrent");
+				end
+
+				if (current > total) then --once the condition has been met, excess does not give you an advantage.
+					current = total;
+				end
+			return current; end
+		},
+		AdditionalSummary = function(p) return GetJoyousVictoryAdditionalSummary(p) end
+}
+
 --MOD\
 
 --MOD/
@@ -320,6 +408,11 @@ function GetRichesVictoryAdditionalSummary(pPlayer:table)
 end
 
 function GetCharismaVictoryAdditionalSummary(pPlayer:table)
+	-- Add or override in expansions
+	return "";
+end
+
+function GetJoyousVictoryAdditionalSummary(pPlayer:table)
 	-- Add or override in expansions
 	return "";
 end
@@ -352,6 +445,7 @@ function ResetState(newView:ifunction)
 	--MOD/
 	Controls.RichesView:SetHide(true);
 	Controls.CharismaView:SetHide(true);
+	Controls.JoyousView:SetHide(true);
 	--MOD\
 
 	-- Reset tourism lens unless we're now view the Culture tab
@@ -390,10 +484,13 @@ function ViewOverall()
 	if charismaVictoryEnabled then
 		PopulateOverallInstance(m_OverallIM:GetInstance(), "VICTORY_CHARISMA", "CHARISMA")
 	end
+	if joyousVictoryEnabled then
+		PopulateOverallInstance(m_OverallIM:GetInstance(), "VICTORY_JOYOUS", "JOYOUS")
+	end
 	
 	for row in GameInfo.Victories() do
 		local victoryType:string = row.VictoryType;
-		if IsCustomVictoryType(victoryType) and Game.IsVictoryEnabled(victoryType) and (not (victoryType == "VICTORY_RICHES")) and (not (victoryType == "VICTORY_CHARISMA") ) then		
+		if IsCustomVictoryType(victoryType) and Game.IsVictoryEnabled(victoryType) and (not (victoryType == "VICTORY_RICHES")) and (not (victoryType == "VICTORY_CHARISMA") and (not (victoryType == "VICTORY_JOYOUS") ) then		
 			PopulateOverallInstance(m_OverallIM:GetInstance(), victoryType);
 		end
 	end
@@ -980,6 +1077,10 @@ function PopulateTabs()
 
 	if charismaVictoryEnabled then
 		AddTab(TAB_CHARISMA, ViewCharisma);
+	end
+
+	if joyousVictoryEnabled then
+		AddTab(TAB_JOYOUS, ViewJoyous);
 	end
 
 	-- Add custom (modded) victory types
@@ -1600,6 +1701,266 @@ end
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- ===========================================================================
+--	Called when Joyous tab is selected (or when screen re-opens if selected)
+-- ===========================================================================
+function ViewJoyous()
+	ResetState(ViewJoyous);
+	Controls.JoyousView:SetHide(false);
+
+	ChangeActiveHeader("VICTORY_Joyous", m_JoyousHeaderIM, Controls.JoyousViewHeader);
+	PopulateGenericHeader(RealizeJoyousStackSize, JOYOUS_TITLE, "", JOYOUS_DETAILS, JOYOUS_ICON);
+	
+	local totalCost:number = 0;
+	local currentProgress:number = 0;
+	local progressText:string = "";
+	local progressResults:table = { 0, 0 }; -- initialize with 2 elements
+	local finishedProjects:table = { {}, {} };
+	
+	--local bHasSpaceport:boolean = false;
+
+
+	if (g_LocalPlayer ~= nil) then
+
+		--Total
+		totalCost = joyousVictoryTotalNecessary  
+		if (g_LocalPlayer:GetProperty("JoyousVictoryTotalTurnsHappiest")) then
+			currentProgress = g_LocalPlayer:GetProperty("JoyousVictoryTotalTurnsHappiest");
+		end
+		progressResults[1] = currentProgress / totalCost;
+
+		--Streak
+		totalCost = joyousVictoryConcurrentNecessary
+		currentProgress = 0
+		if (g_LocalPlayer:GetProperty("JoyousVictoryTotalTurnsConcurrent")) then
+			currentProgress = g_LocalPlayer:GetProperty("JoyousVictoryTotalTurnsConcurrent");
+		end
+		progressResults[2] = currentProgress / totalCost;
+
+	end
+
+	
+
+
+	local nextStep:string = "";
+	for i, result in ipairs(progressResults) do
+		if(result < 1) then
+			progressText = progressText .. "[ICON_Bolt]";
+
+		else
+			progressText = progressText .. "[ICON_CheckmarkBlue] ";
+		end
+		progressText = progressText .. JOYOUS_REQUIREMENTS[i];
+
+
+		if(i < 2) then progressText = progressText .. "[NEWLINE]"; end
+	end
+
+	g_activeheader.AdvisorTextCentered:SetText(progressText);
+
+
+	m_JoyousIM:ResetInstances();
+	m_JoyousTeamIM:ResetInstances();
+
+	
+	local teamIDs = GetAliveMajorTeamIDs();
+	for _, teamID in ipairs(teamIDs) do
+		local team = Teams[teamID];
+		if (team ~= nil) then
+			if #team > 1 then
+				PopulateJoyousTeamInstance(m_JoyousTeamIM:GetInstance(), teamID);
+			else 
+				local pPlayer = Players[team[1]];
+				if (pPlayer:IsAlive() == true and pPlayer:IsMajor() == true) then
+					PopulateJoyousInstance(m_JoyousIM:GetInstance(), pPlayer);
+				end
+			end
+		end
+	end
+	
+
+	RealizeJoyousStackSize();
+end
+
+
+function PopulateJoyousTeamInstance(instance:table, teamID:number)
+
+	PopulateTeamInstanceShared(instance, teamID);
+
+	-- Add team members to player stack
+	if instance.PlayerStackIM == nil then
+		instance.PlayerStackIM = InstanceManager:new("JoyousInstance", "ButtonBG", instance.JoyousPlayerInstanceStack);
+	end
+
+	instance.PlayerStackIM:ResetInstances();
+
+	local teamProgressData:table = {};
+	for i, playerID in ipairs(Teams[teamID]) do
+		if IsAliveAndMajor(playerID) then
+			local pPlayer:table = Players[playerID];
+			local progressData = PopulateJoyousInstance(instance.PlayerStackIM:GetInstance(), pPlayer);
+			if progressData then
+				table.insert(teamProgressData, progressData);
+			end
+		end
+	end
+
+	--TODO/
+
+	-- Sort team progress data
+	table.sort(teamProgressData, function(a, b)
+		-- Compare stage 1 progress
+		local aScore = a.joyousGoalsProgress[1] / joyousVictoryTotalNecessary;
+		local bScore = b.joyousGoalsProgress[1] / joyousVictoryTotalNecessary;
+		if aScore == bScore then
+			-- Compare stage 2 progress
+			aScore = a.joyousGoalsProgress[2] / joyousVictoryConcurrentNecessary;
+			bScore = b.joyousGoalsProgress[2] / joyousVictoryConcurrentNecessary;
+			if aScore == bScore then
+				return a.playerID < b.playerID;
+			end
+		end
+		return aScore > bScore;
+	end);
+
+	-- Populate the team progress with the progress of the furthest player
+	if teamProgressData and #teamProgressData > 0 then
+		PopulateJoyousProgressMeters(instance, teamProgressData[1]);
+	end
+
+	--TODO\
+end
+
+function PopulateJoyousInstance(instance:table, pPlayer:table)
+	local playerID:number = pPlayer:GetID();
+	PopulatePlayerInstanceShared(instance, playerID);
+	
+	-- Progress Data to be returned from function
+	local progressData = nil; 
+
+	local joyousGoalsTotals = { 0 , 0 };
+	local joyousGoalsProgress = { 0 , 0 };
+	local joyousGoalsFinished = { {} , {} };
+
+	--Earnings Progress
+	joyousGoalsProgress[1] = 0
+	joyousGoalsTotals[1] = 0
+	if pPlayer:GetProperty("JoyousVictoryTotalTurnsHappiest") then
+		joyousGoalsProgress[1] = pPlayer:GetProperty("JoyousVictoryTotalTurnsHappiest")
+		joyousGoalsTotals[1] = pPlayer:GetProperty("JoyousVictoryTotalTurnsHappiest")
+	end
+
+	if joyousGoalsProgress[1] > joyousVictoryTotalNecessary then
+		joyousGoalsProgress[1] = joyousVictoryTotalNecessary
+	end
+
+	--Stockpile Progress
+
+	joyousGoalsProgress[2] = 0
+	joyousGoalsTotals[2] = 50
+	if pPlayer:GetProperty("JoyousVictoryTotalTurnsConcurrent") then
+		joyousGoalsProgress[2] = pPlayer:GetProperty("JoyousVictoryTotalTurnsConcurrent")
+		joyousGoalsTotals[2] = pPlayer:GetProperty("JoyousVictoryTotalTurnsConcurrent")
+	end
+
+	if joyousGoalsProgress[2] > joyousVictoryConcurrentNecessary then
+		joyousGoalsProgress[2] = joyousVictoryConcurrentNecessary
+	end
+
+
+	
+
+	-- Save data to be returned
+	progressData = {}; --most progress being saved as player variables
+	progressData.joyousGoalsTotals = joyousGoalsTotals;
+	progressData.joyousGoalsProgress = joyousGoalsProgress;
+	progressData.joyousGoalsFinished = joyousGoalsFinished; 
+	progressData.playerID = playerID;
+
+
+	PopulateJoyousProgressMeters(instance, progressData);
+
+	return progressData;
+end
+
+function PopulateJoyousProgressMeters(instance:table, progressData:table)
+
+	
+	instance.ObjBG_1:SetToolTipString( Locale.Lookup("JOYOUS_VICTORY_TOTAL_TOOLTIP", joyousVictoryTotalNecessary, progressData.joyousGoalsTotals[1]) );
+	instance.ObjBG_2:SetToolTipString( Locale.Lookup("JOYOUS_VICTORY_CONCURRENT_TOOLTIP", joyousVictoryConcurrentNecessary, progressData.joyousGoalsTotals[2]) );
+
+	--Earnings 
+	local denom1 = joyousVictoryTotalNecessary
+	if denom1 < 1 then
+		denom1 = 1
+		progressData.joyousGoalsProgress[1] = 1
+	end
+
+	instance["ObjHidden_" .. 1]:SetHide(true);
+	instance["ObjFill_" .. 1]:SetHide(progressData.joyousGoalsProgress[1] == 0);
+	instance["ObjBar_" .. 1]:SetPercent(progressData.joyousGoalsProgress[1] / denom1);
+	instance["ObjToggle_ON_" .. 1]:SetHide(progressData.joyousGoalsProgress[1] < joyousVictoryTotalNecessary);
+
+	--Stockpile
+	local denom2 = joyousVictoryConcurrentNecessary
+	if denom2 < 1 then
+		denom2 = 1
+		progressData.joyousGoalsProgress[2] = 1
+	end
+
+	instance["ObjHidden_" .. 2]:SetHide(true);
+	instance["ObjFill_" .. 2]:SetHide(progressData.joyousGoalsProgress[2] == 0);
+	instance["ObjBar_" .. 2]:SetPercent(progressData.joyousGoalsProgress[2] / denom2);
+	instance["ObjToggle_ON_" .. 2]:SetHide(progressData.joyousGoalsProgress[2] < joyousVictoryConcurrentNecessary);
+
+	
+end
+
+function RealizeJoyousStackSize()
+	local _, screenY:number = UIManager:GetScreenSizeVal();
+
+	if(g_activeheader[DATA_FIELD_HEADER_EXPANDED]) then
+		local headerHeight:number = g_activeheader[DATA_FIELD_HEADER_HEIGHT];
+		headerHeight = headerHeight + g_activeheader.AdvisorTextCentered:GetSizeY() + g_activeheader.AdvisorTextNextStep:GetSizeY() + (PADDING_HEADER * 2);
+		g_activeheader.AdvisorIcon:SetOffsetY(OFFSET_ADVISOR_ICON_Y + headerHeight);
+		g_activeheader.HeaderFrame:SetSizeY(OFFSET_ADVISOR_TEXT_Y + headerHeight);
+		g_activeheader.ContractHeaderButton:SetOffsetY(OFFSET_CONTRACT_BUTTON_Y + headerHeight);
+		Controls.JoyousViewContents:SetOffsetY(OFFSET_VIEW_CONTENTS + headerHeight + PADDING_HEADER);
+		Controls.JoyousViewScrollbar:SetSizeY(screenY - (SIZE_STACK_DEFAULT + (headerHeight + PADDING_HEADER)));
+		g_activeheader.AdvisorTextCentered:SetHide(false);
+		g_activeheader.AdvisorTextNextStep:SetHide(false);
+	else
+		Controls.JoyousViewContents:SetOffsetY(OFFSET_VIEW_CONTENTS);
+		Controls.JoyousViewScrollbar:SetSizeY(screenY - SIZE_STACK_DEFAULT);
+		g_activeheader.AdvisorTextCentered:SetHide(true);
+		g_activeheader.AdvisorTextNextStep:SetHide(true);
+	end
+
+	RealizeStackAndScrollbar(Controls.JoyousViewStack, Controls.JoyousViewScrollbar, true);
+
+	--local textSize:number = Controls.ScienceDetailsButton:GetTextControl():GetSizeX();
+	--Controls.ScienceDetailsButton:SetSizeX(textSize + PADDING_SCORE_DETAILS_BUTTON_WIDTH);
+end
 
 
 
