@@ -260,7 +260,7 @@ g_victoryData.VICTORY_RICHES = {
 
 			returntext = Locale.Lookup("LOC_WORLD_RANKINGS_OVERVIEW_RICHES_EARNINGS", current, total);
 
-			if (current > total) then 
+			if (current >= total) then 
 				--current = total;
 
 				returntext = Locale.Lookup("LOC_WORLD_RANKINGS_OVERVIEW_RICHES_EARNINGS_ACCOMPLISHED", current, total); 
@@ -276,7 +276,7 @@ g_victoryData.VICTORY_RICHES = {
 				current = p:GetProperty("RichesVictoryEarnings");
 			end
 
-			if (current > total) then --once the condition has been met, excess does not give you an advantage.
+			if (current >= total) then --once the condition has been met, excess does not give you an advantage.
 				current = total;
 			end
 		return current; end
@@ -294,7 +294,7 @@ g_victoryData.VICTORY_RICHES = {
 
 			returntext = Locale.Lookup("LOC_WORLD_RANKINGS_OVERVIEW_RICHES_STOCKPILE", current, total);
 
-			if (current > total) then --once the condition has been met, stop displaying bigger numbers and give a cute checkmark
+			if (current >= total) then --once the condition has been met, stop displaying bigger numbers and give a cute checkmark
 				--current = total;
 
 				returntext = Locale.Lookup("LOC_WORLD_RANKINGS_OVERVIEW_RICHES_STOCKPILE_ACCOMPLISHED", current, total); 
@@ -310,7 +310,7 @@ g_victoryData.VICTORY_RICHES = {
 				current = p:GetProperty("CurrentGoldStockpile");
 			end
 
-			if (current > total) then --once the condition has been met, excess does not give you an advantage.
+			if (current >= total) then --once the condition has been met, excess does not give you an advantage.
 				current = total;
 			end
 		return current; end
@@ -361,7 +361,7 @@ g_victoryData.VICTORY_JOYOUS = {
 
 				returntext = Locale.Lookup("LOC_WORLD_RANKINGS_OVERVIEW_JOYOUS_TOTAL", current, total);
 
-				if (current > total) then 
+				if (current >= total) then 
 					--current = total;
 
 					returntext = Locale.Lookup("LOC_WORLD_RANKINGS_OVERVIEW_JOYOUS_TOTAL_ACCOMPLISHED", current, total); 
@@ -377,7 +377,7 @@ g_victoryData.VICTORY_JOYOUS = {
 					current = p:GetProperty("JoyousVictoryTotalTurnsHappiest");
 				end
 
-				if (current > total) then --once the condition has been met, excess does not give you an advantage.
+				if (current >= total) then --once the condition has been met, excess does not give you an advantage.
 					current = total;
 				end
 			return current; end
@@ -395,7 +395,7 @@ g_victoryData.VICTORY_JOYOUS = {
 
 				returntext = Locale.Lookup("LOC_WORLD_RANKINGS_OVERVIEW_JOYOUS_CONCURRENT", current, total);
 
-				if (current > total) then --once the condition has been met, stop displaying bigger numbers and give a cute checkmark
+				if (current >= total) then --once the condition has been met, stop displaying bigger numbers and give a cute checkmark
 					--current = total;
 
 					returntext = Locale.Lookup("LOC_WORLD_RANKINGS_OVERVIEW_JOYOUS_CONCURRENT_ACCOMPLISHED", current, total); 
@@ -411,7 +411,7 @@ g_victoryData.VICTORY_JOYOUS = {
 					current = p:GetProperty("JoyousVictoryTotalTurnsConcurrent");
 				end
 
-				if (current > total) then --once the condition has been met, excess does not give you an advantage.
+				if (current >= total) then --once the condition has been met, excess does not give you an advantage.
 					current = total;
 				end
 			return current; end

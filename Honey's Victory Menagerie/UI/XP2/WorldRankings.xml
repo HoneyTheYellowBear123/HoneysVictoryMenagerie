@@ -151,16 +151,16 @@
 		<!-- ==================================================================	-->
 		<Container ID="JoyousView" Offset="0,20">
 
-			<Container ID="JoyousViewHeader" Offset="12,60"/>
-			<Container ID="JoyousViewContents" Offset="0,130">
-				<Grid Offset="20,10" Size="243,30" Texture="Controls_ColumnHeader" SliceCorner="10,11" SliceTextureSize="28,28" Color="33,43,49,255"/>
-				<Label Offset="30,20" Style="FontNormalMedium14" Color="255,255,225,100" String="LOC_WORLD_RANKINGS_CIVILIZATION_LABEL"/>
+			<Container ID="JoyousViewHeader" Offset="12,90"/>
+			<Container ID="JoyousViewContents" Offset="0,160">
+				<Grid Offset="20,40" Size="243,30" Texture="Controls_ColumnHeader" SliceCorner="10,11" SliceTextureSize="28,28" Color="33,43,49,255"/>
+				<Label Offset="30,50" Style="FontNormalMedium14" Color="255,255,225,100" String="LOC_WORLD_RANKINGS_CIVILIZATION_LABEL"/>
 
-				<Grid Offset="265,10" Size="111,30" Texture="Controls_ColumnHeader" SliceCorner="10,11" SliceTextureSize="28,28" Color="33,43,49,255"/>
-				<Label Offset="-347,20" Size="103,30" Style="FontNormalMedium14" Color="255,255,225,100" Anchor="R,T" String="LOC_VICTORY_JOYOUS_TOTAL_NAME"/>
+				<Grid Offset="265,40" Size="111,30" Texture="Controls_ColumnHeader" SliceCorner="10,11" SliceTextureSize="28,28" Color="33,43,49,255"/>
+				<Label Offset="-347,50" Size="103,30" Style="FontNormalMedium14" Color="255,255,225,100" Anchor="R,T" String="LOC_VICTORY_JOYOUS_TOTAL_NAME"/>
 
-				<Grid Offset="378,10" Size="113,30" Texture="Controls_ColumnHeader" SliceCorner="10,11" SliceTextureSize="28,28" Color="33,43,49,255"/>
-				<Label Offset="-464,20" Size="111,30" Style="FontNormalMedium14" Color="255,255,225,100" Anchor="R,T" String="LOC_VICTORY_JOYOUS_CONCURRENT_NAME"/>
+				<Grid Offset="378,40" Size="113,30" Texture="Controls_ColumnHeader" SliceCorner="10,11" SliceTextureSize="28,28" Color="33,43,49,255"/>
+				<Label Offset="-464,50" Size="111,30" Style="FontNormalMedium14" Color="255,255,225,100" Anchor="R,T" String="LOC_VICTORY_JOYOUS_CONCURRENT_NAME"/>
 
 
 				<!--
@@ -168,7 +168,7 @@
 				<CheckBox ID="ScienceDetailsCheck" Offset="465,18" Style="MainCheckBox" IsChecked="0"/>
 				-->
 
-				<ScrollPanel ID="JoyousViewScrollbar" Offset="15,45" Size="parent-37,545" Style="WorldRankingsScrollPanel">
+				<ScrollPanel ID="JoyousViewScrollbar" Offset="15,75" Size="parent-37,545" Style="WorldRankingsScrollPanel">
 					<Stack ID="JoyousViewStack" Offset="0,5" Padding="5"/>
 				</ScrollPanel>
 			</Container>
