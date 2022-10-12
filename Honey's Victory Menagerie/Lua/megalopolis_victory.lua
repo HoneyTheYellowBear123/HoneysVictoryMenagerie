@@ -4,7 +4,7 @@
 --------------------------------------------------------------
 
 
-local victoryMegaPopulationAmount = GameConfiguration.GetValue("CONFIG_MEGALOPOLIS_VIC_POPULATION0");
+local victoryMegaPopulationAmount = GameConfiguration.GetValue("CONFIG_MEGALOPOLIS_VIC_POPULATION");
 local victoryMegaCityAmount = GameConfiguration.GetValue("CONFIG_MEGALOPOLIS_VIC_CITIES");
 local megalopolisVictoryEnabled = GameConfiguration.GetValue("CONFIG_MEGALOPOLIS_VIC");
 

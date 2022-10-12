@@ -36,6 +36,11 @@ local charismaVictoryEnabled = GameConfiguration.GetValue("CONFIG_CHARISMA_VIC")
 local joyousVictoryEnabled = GameConfiguration.GetValue("CONFIG_JOYOUS_VIC")
 local joyousVictoryTotalNecessary = GameConfiguration.GetValue("CONFIG_JOYOUS_VIC_TOTAL")
 local joyousVictoryConcurrentNecessary = GameConfiguration.GetValue("CONFIG_JOYOUS_VIC_CONCURRENT")
+
+
+local victoryMegaPopulationAmount = GameConfiguration.GetValue("CONFIG_MEGALOPOLIS_VIC_POPULATION");
+local victoryMegaCityAmount = GameConfiguration.GetValue("CONFIG_MEGALOPOLIS_VIC_CITIES");
+local megalopolisVictoryEnabled = GameConfiguration.GetValue("CONFIG_MEGALOPOLIS_VIC");
 --MOD\
 
 
@@ -212,7 +217,7 @@ g_victoryData = {
 
 			GetScore = function(p) 
 				local current = 0;
-				local total = victoryEarningsAmount
+				local total = joyousVictoryTotalNecessary
 				if (p:GetProperty("JoyousVictoryTotalTurnsHappiest")) then
 					current = p:GetProperty("JoyousVictoryTotalTurnsHappiest");
 				end
@@ -246,7 +251,7 @@ g_victoryData = {
 
 			GetScore = function(p) 
 				local current = 0;
-				local total = victoryStockpileAmount
+				local total = joyousVictoryConcurrentNecessary
 				if (p:GetProperty("JoyousVictoryTotalTurnsConcurrent")) then
 					current = p:GetProperty("JoyousVictoryTotalTurnsConcurrent");
 				end
@@ -259,6 +264,36 @@ g_victoryData = {
 		AdditionalSummary = function(p) return GetJoyousVictoryAdditionalSummary(p) end
 	},
 
+
+
+
+	VICTORY_MEGALOPOLIS= {
+		GetText = function(p) 
+			local total = victoryMegaCityAmount
+			local current = 0;
+			local returntext = "";
+			if (p:GetProperty("MegalopolisVictoryTotalWorthyCities")) then
+				current = p:GetProperty("MegalopolisVictoryTotalWorthyCities");
+			end
+
+			returntext = Locale.Lookup("LOC_WORLD_RANKINGS_OVERVIEW_MEGALOPOLIS_CITIES", current, total);
+
+			return returntext;
+		end,
+
+		GetScore = function(p) 
+			local current = 0;
+			local total = victoryMegaCityAmount
+			if (p:GetProperty("MegalopolisVictoryTotalWorthyCities")) then
+				current = p:GetProperty("MegalopolisVictoryTotalWorthyCities");
+			end
+
+			if (current > total) then --once the condition has been met, excess does not give you an advantage.
+				current = total;
+			end
+		return current; end,
+		AdditionalSummary = function(p) return GetMegalopolisVictoryAdditionalSummary(p) end
+	},
 	--MOD\
 };
 
@@ -276,6 +311,11 @@ function GetCharismaVictoryAdditionalSummary(pPlayer:table)
 end
 
 function GetJoyousVictoryAdditionalSummary(pPlayer:table)
+	-- Add or override in expansions
+	return "";
+end
+
+function GetMegalopolisVictoryAdditionalSummary(pPlayer:table)
 	-- Add or override in expansions
 	return "";
 end

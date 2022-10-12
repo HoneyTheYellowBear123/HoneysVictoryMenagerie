@@ -372,7 +372,7 @@ g_victoryData.VICTORY_JOYOUS = {
 
 			GetScore = function(p) 
 				local current = 0;
-				local total = victoryEarningsAmount
+				local total =  joyousVictoryTotalNecessary
 				if (p:GetProperty("JoyousVictoryTotalTurnsHappiest")) then
 					current = p:GetProperty("JoyousVictoryTotalTurnsHappiest");
 				end
@@ -406,7 +406,7 @@ g_victoryData.VICTORY_JOYOUS = {
 
 			GetScore = function(p) 
 				local current = 0;
-				local total = victoryStockpileAmount
+				local total = joyousVictoryConcurrentNecessary
 				if (p:GetProperty("JoyousVictoryTotalTurnsConcurrent")) then
 					current = p:GetProperty("JoyousVictoryTotalTurnsConcurrent");
 				end
