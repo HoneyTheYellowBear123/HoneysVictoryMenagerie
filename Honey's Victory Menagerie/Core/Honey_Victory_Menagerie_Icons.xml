@@ -19,6 +19,11 @@
 		<Row Name="ICON_ATLAS_VICTORY_JOYOUS" IconSize="130" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_VICTORY_JOYOUS_130.dds"/>
 		<Row Name="ICON_ATLAS_VICTORY_JOYOUS" IconSize="80" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_VICTORY_JOYOUS_80.dds"/>
 		<Row Name="ICON_ATLAS_VICTORY_JOYOUS" IconSize="64" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_VICTORY_JOYOUS_64.dds"/>
+
+		<Row Name="ICON_ATLAS_VICTORY_MEGALOPOLIS" IconSize="220" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_VICTORY_MEGALOPOLIS_220.dds"/>
+		<Row Name="ICON_ATLAS_VICTORY_MEGALOPOLIS" IconSize="130" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_VICTORY_MEGALOPOLIS_130.dds"/>
+		<Row Name="ICON_ATLAS_VICTORY_MEGALOPOLIS" IconSize="80" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_VICTORY_MEGALOPOLIS_80.dds"/>
+		<Row Name="ICON_ATLAS_VICTORY_MEGALOPOLIS" IconSize="64" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_VICTORY_MEGALOPOLIS_64.dds"/>
 		
 	</IconTextureAtlases>
 
@@ -27,6 +32,7 @@
 		<Row Name="ICON_VICTORY_RICHES" Atlas="ICON_ATLAS_VICTORY_RICHES" Index="0"/>
 		<Row Name="ICON_VICTORY_CHARISMA" Atlas="ICON_ATLAS_VICTORY_CHARISMA" Index="0"/>
 		<Row Name="ICON_VICTORY_JOYOUS" Atlas="ICON_ATLAS_VICTORY_JOYOUS" Index="0"/>
+		<Row Name="ICON_VICTORY_MEGALOPOLIS" Atlas="ICON_ATLAS_VICTORY_MEGALOPOLIS" Index="0"/>
 		
 	</IconDefinitions>
 		

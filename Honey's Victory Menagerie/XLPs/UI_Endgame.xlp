@@ -45,6 +45,18 @@
 			<m_EntryID text="EndGame_BG_Joyous"/>
 			<m_ObjectName text="EndGame_BG_Joyous"/>
 		</Element>
+		<Element>
+			<m_EntryID text="EndGame_RibbonTile_Megalopolis"/>
+			<m_ObjectName text="EndGame_RibbonTile_Megalopolis"/>
+		</Element>
+		<Element>
+			<m_EntryID text="EndGame_Ribbon_Megalopolis"/>
+			<m_ObjectName text="EndGame_Ribbon_Megalopolis"/>
+		</Element>
+		<Element>
+			<m_EntryID text="EndGame_BG_Megalopolis"/>
+			<m_ObjectName text="EndGame_BG_Megalopolis"/>
+		</Element>
 	</m_Entries>
 	<m_AllowedPlatforms>
 		<Element>WINDOWS</Element>
