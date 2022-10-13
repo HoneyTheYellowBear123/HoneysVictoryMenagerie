@@ -195,6 +195,18 @@ Styles = {
 	SndStop = "Stop_Cinematic_Endgame_Time", --good enough
 	Color = "COLOR_VICTORY_JOYOUS",
 	},
+
+
+	["VICTORY_MEGALOPOLIS"] = {
+	RibbonIcon = "ICON_VICTORY_MEGALOPOLIS",
+	Ribbon = "EndGame_Ribbon_Megalopolis",
+	RibbonTile = "EndGame_RibbonTile_Megalopolis",
+	Background = "EndGame_BG_Megalopolis", 
+	Movie = "Time.bk2", --good enough
+	SndStart = "Play_Cinematic_Endgame_Time", --good enough
+	SndStop = "Stop_Cinematic_Endgame_Time", --good enough
+	Color = "COLOR_VICTORY_MEGALOPOLIS",
+	},
 };
 
 
