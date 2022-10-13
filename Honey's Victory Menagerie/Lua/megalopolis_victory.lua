@@ -34,6 +34,8 @@ end
 
 function updateMegalopolisVictoryProgress()
 
+	local worthyPopulationSum = 0
+
 	for playerid, playerobject in pairs(Players) do
       worthyPopulationSum = 0
     
@@ -52,7 +54,7 @@ function updateMegalopolisVictoryProgress()
 		  end
 		 
 		  playerobject:SetProperty("MegalopolisVictoryTotalWorthyCities",worthyPopulationSum)
-		  if (worthPopulationSum >= victoryMegaCityAmount) then
+		  if (worthyPopulationSum >= victoryMegaCityAmount) then
 		      grantMegalopolisVictoryWin(playerobject)
 		  end
 	      
@@ -61,7 +63,6 @@ function updateMegalopolisVictoryProgress()
 	end
 
 end
-
 
 
 
@@ -76,7 +77,7 @@ function grantMegalopolisVictoryWin(playerobject)
 	--give the player the building that grants victory but cannot be built manually
 	local capital = playerobject:GetCities():GetCapitalCity();
 	if capital ~= nil then
-		if capital:GetBuildings():HasBuilding(charismaBuildingIndex) ~= true then
+		if capital:GetBuildings():HasBuilding(megalopolisBuildingIndex) ~= true then
 			local plotCapital = Map.GetPlot(capital:GetX(), capital:GetY());
 			capital:GetBuildQueue():CreateIncompleteBuilding(megalopolisBuildingIndex, plotCapital:GetIndex(), 100);
 			capital:GetBuildings():RemoveBuilding(joyousBuildingIndex);

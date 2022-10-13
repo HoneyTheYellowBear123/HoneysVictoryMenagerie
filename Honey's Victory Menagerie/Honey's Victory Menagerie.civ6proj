@@ -19,7 +19,7 @@
     <AssemblyName>Honey's Victory Menagerie</AssemblyName>
     <RootNamespace>Honey's Victory Menagerie</RootNamespace>
     <FrontEndActionData><![CDATA[<FrontEndActions><UpdateIcons id="NewAction"><File>Core/Honey_Victory_Menagerie_Icons.xml</File></UpdateIcons><UpdateText id="NewAction"><File>Core/Honey_Victory_Menagerie_InGame_Text.xml</File><File>Core/Honey_Victory_Menagerie_Text.xml</File></UpdateText><UpdateArt id="NewAction"><File>(Mod Art Dependency File)</File><File>Honey_s_Victory_Menagerie.Art.xml</File></UpdateArt><UpdateDatabase id="NewAction"><File>Core/Honey_Victory_Menagerie_Config.sql</File></UpdateDatabase><UpdateColors id="NewAction"><File>Core/Honey_Victory_Menagerie_Colors.sql</File></UpdateColors></FrontEndActions>]]></FrontEndActionData>
-    <InGameActionData><![CDATA[<InGameActions><AddGameplayScripts id="NewAction"><File>Lua/charisma_victory.lua</File><File>Lua/riches_victory.lua</File><File>Lua/joyous_victory.lua</File></AddGameplayScripts><UpdateArt id="NewAction"><File>(Mod Art Dependency File)</File><File>Honey_s_Victory_Menagerie.Art.xml</File></UpdateArt><UpdateText id="NewAction"><File>Core/Honey_Victory_Menagerie_InGame_Text.xml</File><File>Core/Honey_Victory_Menagerie_Text.xml</File></UpdateText><UpdateDatabase id="NewAction"><File>Core/Honey_Victory_Menagerie_Data.sql</File></UpdateDatabase><UpdateIcons id="NewAction"><File>Core/Honey_Victory_Menagerie_Icons.xml</File></UpdateIcons><UpdateColors id="NewAction"><File>Core/Honey_Victory_Menagerie_Colors.sql</File></UpdateColors><ReplaceUIScript id="BaseGameEndGameOverride"><Properties><LuaContext>EndGameMenu</LuaContext><LoadOrder>1000</LoadOrder><LuaReplace>UI/Base/honey_victory_menagerie_endgame_override.lua</LuaReplace></Properties><Criteria>BASE_OR_XP1_RULESET_VICTORY_MENAGERIE</Criteria></ReplaceUIScript><ReplaceUIScript id="BaseGameWROverride"><Properties><LoadOrder>1000</LoadOrder><LuaContext>WorldRankings</LuaContext><LuaReplace>UI/Base/honey_victory_menagerie_wr_override.lua</LuaReplace></Properties><Criteria>BASE_OR_XP1_RULESET_VICTORY_MENAGERIE</Criteria></ReplaceUIScript><ImportFiles id="BaseGameWRxmlOverride"><Properties><LoadOrder>100</LoadOrder></Properties><Criteria>BASE_OR_XP1_RULESET_VICTORY_MENAGERIE</Criteria><File>UI/Base/WorldRankings.xml</File></ImportFiles><ReplaceUIScript id="XP2EndGameOverride"><Properties><LoadOrder>1001</LoadOrder><LuaContext>EndGameMenu</LuaContext><LuaReplace>UI/XP2/honey_victory_menagerie_endgame_override_xp2.lua</LuaReplace></Properties><Criteria>XP2_RULESET_VICTORY_MENAGERIE</Criteria></ReplaceUIScript><ReplaceUIScript id="XP2WROverride"><Properties><LoadOrder>1001</LoadOrder><LuaContext>WorldRankings</LuaContext><LuaReplace>UI/XP2/honey_victory_menagerie_wr_override_xp2.lua</LuaReplace></Properties><Criteria>XP2_RULESET_VICTORY_MENAGERIE</Criteria></ReplaceUIScript><ImportFiles id="XP2WRxmlOverride"><Properties><LoadOrder>101</LoadOrder></Properties><Criteria>XP2_RULESET_VICTORY_MENAGERIE</Criteria><File>UI/XP2/WorldRankings.xml</File></ImportFiles></InGameActions>]]></InGameActionData>
+    <InGameActionData><![CDATA[<InGameActions><AddGameplayScripts id="NewAction"><File>Lua/charisma_victory.lua</File><File>Lua/riches_victory.lua</File><File>Lua/joyous_victory.lua</File><File>Lua/megalopolis_victory.lua</File></AddGameplayScripts><UpdateArt id="NewAction"><File>(Mod Art Dependency File)</File><File>Honey_s_Victory_Menagerie.Art.xml</File></UpdateArt><UpdateText id="NewAction"><File>Core/Honey_Victory_Menagerie_InGame_Text.xml</File><File>Core/Honey_Victory_Menagerie_Text.xml</File></UpdateText><UpdateDatabase id="NewAction"><File>Core/Honey_Victory_Menagerie_Data.sql</File></UpdateDatabase><UpdateIcons id="NewAction"><File>Core/Honey_Victory_Menagerie_Icons.xml</File></UpdateIcons><UpdateColors id="NewAction"><File>Core/Honey_Victory_Menagerie_Colors.sql</File></UpdateColors><ReplaceUIScript id="BaseGameEndGameOverride"><Properties><LuaContext>EndGameMenu</LuaContext><LoadOrder>1000</LoadOrder><LuaReplace>UI/Base/honey_victory_menagerie_endgame_override.lua</LuaReplace></Properties><Criteria>BASE_OR_XP1_RULESET_VICTORY_MENAGERIE</Criteria></ReplaceUIScript><ReplaceUIScript id="BaseGameWROverride"><Properties><LoadOrder>1000</LoadOrder><LuaContext>WorldRankings</LuaContext><LuaReplace>UI/Base/honey_victory_menagerie_wr_override.lua</LuaReplace></Properties><Criteria>BASE_OR_XP1_RULESET_VICTORY_MENAGERIE</Criteria></ReplaceUIScript><ImportFiles id="BaseGameWRxmlOverride"><Properties><LoadOrder>100</LoadOrder></Properties><Criteria>BASE_OR_XP1_RULESET_VICTORY_MENAGERIE</Criteria><File>UI/Base/WorldRankings.xml</File></ImportFiles><ReplaceUIScript id="XP2EndGameOverride"><Properties><LoadOrder>1001</LoadOrder><LuaContext>EndGameMenu</LuaContext><LuaReplace>UI/XP2/honey_victory_menagerie_endgame_override_xp2.lua</LuaReplace></Properties><Criteria>XP2_RULESET_VICTORY_MENAGERIE</Criteria></ReplaceUIScript><ReplaceUIScript id="XP2WROverride"><Properties><LoadOrder>1001</LoadOrder><LuaContext>WorldRankings</LuaContext><LuaReplace>UI/XP2/honey_victory_menagerie_wr_override_xp2.lua</LuaReplace></Properties><Criteria>XP2_RULESET_VICTORY_MENAGERIE</Criteria></ReplaceUIScript><ImportFiles id="XP2WRxmlOverride"><Properties><LoadOrder>101</LoadOrder></Properties><Criteria>XP2_RULESET_VICTORY_MENAGERIE</Criteria><File>UI/XP2/WorldRankings.xml</File></ImportFiles></InGameActions>]]></InGameActionData>
     <ActionCriteriaData><![CDATA[<ActionCriteria><Criteria id="BASE_OR_XP1_RULESET_VICTORY_MENAGERIE"><RuleSetInUse><RuleSetInUse>RULESET_STANDARD,RULESET_EXPANSION_1</RuleSetInUse></RuleSetInUse></Criteria><Criteria id="XP2_RULESET_VICTORY_MENAGERIE"><RuleSetInUse><RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse></RuleSetInUse></Criteria></ActionCriteria>]]></ActionCriteriaData>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Default' ">
@@ -66,6 +66,9 @@
     <Content Include="Lua\joyous_victory.lua">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Lua\megalopolis_victory.lua">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Lua\riches_victory.lua">
       <SubType>Content</SubType>
     </Content>
@@ -87,6 +90,12 @@
     <Content Include="Textures\EndGame_BG_Joyous.tex">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Textures\EndGame_BG_Megalopolis.dds">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\EndGame_BG_Megalopolis.tex">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Textures\EndGame_BG_Riches.dds">
       <SubType>Content</SubType>
     </Content>
@@ -103,6 +112,12 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="Textures\EndGame_RibbonTile_Joyous.tex">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\EndGame_RibbonTile_Megalopolis.dds">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\EndGame_RibbonTile_Megalopolis.tex">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Textures\EndGame_RibbonTile_Riches.dds">
@@ -123,10 +138,40 @@
     <Content Include="Textures\EndGame_Ribbon_Joyous.tex">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Textures\EndGame_Ribbon_Megalopolis.dds">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\EndGame_Ribbon_Megalopolis.tex">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Textures\EndGame_Ribbon_Riches.dds">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Textures\EndGame_Ribbon_Riches.tex">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\ICON_VICTORY_MEGALOPOLIS_130.dds">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\ICON_VICTORY_MEGALOPOLIS_130.tex">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\ICON_VICTORY_MEGALOPOLIS_220.dds">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\ICON_VICTORY_MEGALOPOLIS_220.tex">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\ICON_VICTORY_MEGALOPOLIS_64.dds">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\ICON_VICTORY_MEGALOPOLIS_64.tex">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\ICON_VICTORY_MEGALOPOLIS_80.dds">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\ICON_VICTORY_MEGALOPOLIS_80.tex">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Textures\ICON_VICTORY_JOYOUS_130.tex">
@@ -205,6 +250,12 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="Textures\JoyousProgressBar84.tex">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\MegalopolisProgressBar168.dds">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\MegalopolisProgressBar168.tex">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Textures\RichesProgressBar84.dds">

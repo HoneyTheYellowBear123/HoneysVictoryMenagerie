@@ -3652,8 +3652,8 @@ function PopulateMegalopolisInstance(instance:table, pPlayer:table)
 		megalopolisGoalsTotals[1] = pPlayer:GetProperty("MegalopolisVictoryTotalWorthyCities")
 	end
 
-	if megalopolisGoalsProgress[1] > victoryRecruitmentAmount then
-		megalopolisGoalsProgress[1] = victoryRecruitmentAmount
+	if megalopolisGoalsProgress[1] > victoryMegaCityAmount then
+		megalopolisGoalsProgress[1] = victoryMegaCityAmount
 	end
 
 
@@ -3675,11 +3675,11 @@ end
 function PopulateMegalopolisProgressMeters(instance:table, progressData:table)
 
 	
-	instance.ObjBG_1:SetToolTipString( Locale.Lookup("MEGALOPOLIS_VICTORY_CITIES_TOOLTIP", victoryRecruitmentAmount, progressData.megalopolisGoalsTotals[1]) );
-	--instance.ObjBG_2:SetToolTipString( Locale.Lookup("RICHES_VICTORY_STOCKPILE_TOOLTIP", victoryStockpileAmount, progressData.richesGoalsTotals[2]) );
+	instance.ObjBG_1:SetToolTipString( Locale.Lookup("MEGALOPOLIS_VICTORY_CITIES_TOOLTIP",  victoryMegaCityAmount, victoryMegaPopulationAmount, progressData.megalopolisGoalsTotals[1] ) );
+	
 
-	--Earnings 
-	local denom1 = victoryRecruitmentAmount
+	--Cities
+	local denom1 = victoryMegaCityAmount
 	if denom1 < 1 then
 		denom1 = 1
 		progressData.megalopolisGoalsProgress[1] = 1
@@ -3688,7 +3688,7 @@ function PopulateMegalopolisProgressMeters(instance:table, progressData:table)
 	instance["ObjHidden_" .. 1]:SetHide(true);
 	instance["ObjFill_" .. 1]:SetHide(progressData.megalopolisGoalsProgress[1] == 0);
 	instance["ObjBar_" .. 1]:SetPercent(progressData.megalopolisGoalsProgress[1] / denom1);
-	instance["ObjToggle_ON_" .. 1]:SetHide(progressData.megalopolisGoalsProgress[1] < victoryRecruitmentAmount);
+	instance["ObjToggle_ON_" .. 1]:SetHide(progressData.megalopolisGoalsProgress[1] < victoryMegaCityAmount);
 
 
 	
