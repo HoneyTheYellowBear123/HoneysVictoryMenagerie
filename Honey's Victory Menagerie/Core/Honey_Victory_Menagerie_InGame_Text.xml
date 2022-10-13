@@ -126,7 +126,7 @@
 			<Text>Megalopolic Victory</Text>
 		</Row>
 		<Row Tag="LOC_WORLD_RANKINGS_MEGALOPOLIS_DETAILS">
-			<Text>To achieve a [COLOR:ResFavorLabelCS]MEGALOPOLIS[ENDCOLOR] victory, you must occupy at least {1_cities_required} cities, each with a population of at least {2_required_population} [Icon_Citizen] citizens.</Text>
+			<Text>To achieve a [COLOR:ResFavorLabelCS]MEGALOPOLIS[ENDCOLOR] victory, you must occupy at least {1_cities_required} cities, each with a population of at least {2_required_population} [Icon_Citizen] citizens. Progress towards this goal may be lost if a city is captured, razed, or loses population.</Text>
 		</Row>
 		<Row Tag="MEGALOPOLIS_VICTORY_CITIES_TOOLTIP">
 			<Text>Occupy {1_cities_required} cities, each with a population of at least {2_required_population} [Icon_Citizen] citizens. This player has {3_current_recruitment} cities with the required population.</Text>

@@ -157,10 +157,10 @@
 				<Label Offset="30,50" Style="FontNormalMedium14" Color="255,255,225,100" String="LOC_WORLD_RANKINGS_CIVILIZATION_LABEL"/>
 
 				<Grid Offset="265,40" Size="111,30" Texture="Controls_ColumnHeader" SliceCorner="10,11" SliceTextureSize="28,28" Color="33,43,49,255"/>
-				<Label Offset="-347,50" Size="103,30" Style="FontNormalMedium14" Color="255,255,225,100" Anchor="R,T" String="LOC_VICTORY_JOYOUS_TOTAL_NAME"/>
+				<Label Offset="-332,50" Size="103,30" Style="FontNormalMedium14" Color="255,255,225,100" Anchor="R,T" String="LOC_VICTORY_JOYOUS_TOTAL_NAME"/>
 
 				<Grid Offset="378,40" Size="113,30" Texture="Controls_ColumnHeader" SliceCorner="10,11" SliceTextureSize="28,28" Color="33,43,49,255"/>
-				<Label Offset="-464,50" Size="111,30" Style="FontNormalMedium14" Color="255,255,225,100" Anchor="R,T" String="LOC_VICTORY_JOYOUS_CONCURRENT_NAME"/>
+				<Label Offset="-449,50" Size="111,30" Style="FontNormalMedium14" Color="255,255,225,100" Anchor="R,T" String="LOC_VICTORY_JOYOUS_CONCURRENT_NAME"/>
 
 
 				<!--
@@ -187,7 +187,7 @@
 				<Label Offset="30,50" Style="FontNormalMedium14" Color="255,255,225,100" String="LOC_WORLD_RANKINGS_CIVILIZATION_LABEL"/>
 
 				<Grid Offset="267,40" Size="226,30" Texture="Controls_ColumnHeader" SliceCorner="10,11" SliceTextureSize="28,28" Color="33,43,49,255"/>
-				<Label Offset="-424,50" Size="103,30" Style="FontNormalMedium14" Color="255,255,225,100" Anchor="R,T" String="LOC_VICTORY_MEGALOPOLIS_CITIES"/>
+				<Label Offset="-394,50" Size="103,30" Style="FontNormalMedium14" Color="255,255,225,100" Anchor="R,T" String="LOC_VICTORY_MEGALOPOLIS_CITIES"/>
 
 
 				<!--
