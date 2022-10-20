@@ -48,35 +48,35 @@ function updateJoyousVictoryProgress()
     
 	  if ( playerobject:IsMajor() and playerobject:IsAlive() ) then
 
-		  print("a test")
+		 
 
 		  playerCityMembers = playerobject:GetCities()
 		  for i, cityObject in playerCityMembers:Members() do
-			 print("b test")
+			
     
 			 population = cityObject:GetPopulation()
 			 amenities = cityObject:GetGrowth():GetAmenities()
 
-			 print("amenities")
+			
 			 print(amenities)
-			 print("population")
+			 
 			 print(population)
 			
-			 print("population sum in loop a")
+			
 			 print(populationSum)
 			 populationSum = populationSum + population
-			 print("population sum in loop b")
+		
 			 print(populationSum)
 			 amenitiesSum = amenitiesSum + amenities
 		  end
-		  print("population sum in loop c")
+		 
 	      print(populationSum)
 		  local amenityRatio = 0
 		  if (not (populationSum == 0) ) then
-			  print("c test")
+			 
 			  amenityRatio = (amenitiesSum / populationSum)
 		  end
-		  print("amenityRatio!")
+		
 		  print(amenityRatio)
 		  local playerEntry = { amenityRatio, playerobject }
 		  table.insert( amenityTable, playerEntry )
@@ -86,7 +86,7 @@ function updateJoyousVictoryProgress()
 	--find the best ratio
 	local best_ratio = 0
 	for index, entry in pairs(amenityTable) do
-		print("amenityvalue!")
+	
 		print(entry[1])
 		if entry[1] > best_ratio  then
 			best_ratio = entry[1]	

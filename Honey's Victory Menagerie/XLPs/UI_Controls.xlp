@@ -21,6 +21,10 @@
 			<m_EntryID text="CharismaProgressBar168"/>
 			<m_ObjectName text="CharismaProgressBar168"/>
 		</Element>
+		<Element>
+			<m_EntryID text="MegalopolisProgressBar168"/>
+			<m_ObjectName text="MegalopolisProgressBar168"/>
+		</Element>
 	</m_Entries>
 	<m_AllowedPlatforms>
 		<Element>LINUX</Element>

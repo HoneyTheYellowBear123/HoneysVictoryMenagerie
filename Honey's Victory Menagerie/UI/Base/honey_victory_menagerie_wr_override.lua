@@ -36,6 +36,11 @@ local charismaVictoryEnabled = GameConfiguration.GetValue("CONFIG_CHARISMA_VIC")
 local joyousVictoryEnabled = GameConfiguration.GetValue("CONFIG_JOYOUS_VIC")
 local joyousVictoryTotalNecessary = GameConfiguration.GetValue("CONFIG_JOYOUS_VIC_TOTAL")
 local joyousVictoryConcurrentNecessary = GameConfiguration.GetValue("CONFIG_JOYOUS_VIC_CONCURRENT")
+
+
+local victoryMegaPopulationAmount = GameConfiguration.GetValue("CONFIG_MEGALOPOLIS_VIC_POPULATION");
+local victoryMegaCityAmount = GameConfiguration.GetValue("CONFIG_MEGALOPOLIS_VIC_CITIES");
+local megalopolisVictoryEnabled = GameConfiguration.GetValue("CONFIG_MEGALOPOLIS_VIC");
 --MOD\
 
 
@@ -212,7 +217,7 @@ g_victoryData = {
 
 			GetScore = function(p) 
 				local current = 0;
-				local total = victoryEarningsAmount
+				local total = joyousVictoryTotalNecessary
 				if (p:GetProperty("JoyousVictoryTotalTurnsHappiest")) then
 					current = p:GetProperty("JoyousVictoryTotalTurnsHappiest");
 				end
@@ -246,7 +251,7 @@ g_victoryData = {
 
 			GetScore = function(p) 
 				local current = 0;
-				local total = victoryStockpileAmount
+				local total = joyousVictoryConcurrentNecessary
 				if (p:GetProperty("JoyousVictoryTotalTurnsConcurrent")) then
 					current = p:GetProperty("JoyousVictoryTotalTurnsConcurrent");
 				end
@@ -259,6 +264,36 @@ g_victoryData = {
 		AdditionalSummary = function(p) return GetJoyousVictoryAdditionalSummary(p) end
 	},
 
+
+
+
+	VICTORY_MEGALOPOLIS= {
+		GetText = function(p) 
+			local total = victoryMegaCityAmount
+			local current = 0;
+			local returntext = "";
+			if (p:GetProperty("MegalopolisVictoryTotalWorthyCities")) then
+				current = p:GetProperty("MegalopolisVictoryTotalWorthyCities");
+			end
+
+			returntext = Locale.Lookup("LOC_WORLD_RANKINGS_OVERVIEW_MEGALOPOLIS_CITIES", current, total);
+
+			return returntext;
+		end,
+
+		GetScore = function(p) 
+			local current = 0;
+			local total = victoryMegaCityAmount
+			if (p:GetProperty("MegalopolisVictoryTotalWorthyCities")) then
+				current = p:GetProperty("MegalopolisVictoryTotalWorthyCities");
+			end
+
+			if (current > total) then --once the condition has been met, excess does not give you an advantage.
+				current = total;
+			end
+		return current; end,
+		AdditionalSummary = function(p) return GetMegalopolisVictoryAdditionalSummary(p) end
+	},
 	--MOD\
 };
 
@@ -276,6 +311,11 @@ function GetCharismaVictoryAdditionalSummary(pPlayer:table)
 end
 
 function GetJoyousVictoryAdditionalSummary(pPlayer:table)
+	-- Add or override in expansions
+	return "";
+end
+
+function GetMegalopolisVictoryAdditionalSummary(pPlayer:table)
 	-- Add or override in expansions
 	return "";
 end
@@ -359,6 +399,7 @@ TAB_DOMINATION = Locale.Lookup("LOC_WORLD_RANKINGS_DOMINATION_TAB");
 TAB_RICHES = Locale.Lookup("LOC_WORLD_RANKINGS_RICHES_TAB");
 TAB_CHARISMA = Locale.Lookup("LOC_WORLD_RANKINGS_CHARISMA_TAB");
 TAB_JOYOUS = Locale.Lookup("LOC_WORLD_RANKINGS_JOYOUS_TAB");
+TAB_MEGALOPOLIS = Locale.Lookup("LOC_WORLD_RANKINGS_MEGALOPOLIS_TAB");
 --MOD\
 
 SCORE_TITLE = Locale.Lookup("LOC_WORLD_RANKINGS_SCORE_VICTORY");
@@ -415,6 +456,10 @@ local JOYOUS_REQUIREMENTS:table = {
 	Locale.Lookup("LOC_WORLD_RANKINGS_JOYOUS_TOTAL_REQUIREMENT",joyousVictoryTotalNecessary),
 	Locale.Lookup("LOC_WORLD_RANKINGS_JOYOUS_CONCURRENT_REQUIREMENT",joyousVictoryConcurrentNecessary)
 };
+
+local MEGALOPOLIS_ICON:string = "ICON_VICTORY_MEGALOPOLIS";
+local MEGALOPOLIS_TITLE:string = Locale.Lookup("LOC_WORLD_RANKINGS_MEGALOPOLIS_VICTORY");
+local MEGALOPOLIS_DETAILS:string = Locale.Lookup("LOC_WORLD_RANKINGS_MEGALOPOLIS_DETAILS",victoryMegaCityAmount,victoryMegaPopulationAmount);
 --MOD\
 
 --antonjs: Removed the other state and related text, in favor of showing all information together. Leaving state functionality intact in case we want to use it in the future.
@@ -516,6 +561,10 @@ local m_CharismaTeamIM:table = InstanceManager:new("CharismaTeamInstance", "Butt
 local m_JoyousHeaderIM	:table = InstanceManager:new("JoyousHeaderInstance", "HeaderTop", Controls.JoyousViewHeader);
 local m_JoyousIM:table = InstanceManager:new("JoyousInstance", "ButtonBG", Controls.JoyousViewStack);
 local m_JoyousTeamIM:table = InstanceManager:new("JoyousTeamInstance", "ButtonFrame", Controls.JoyousViewStack);
+
+local m_MegalopolisHeaderIM	:table = InstanceManager:new("MegalopolisHeaderInstance", "HeaderTop", Controls.MegalopolisViewHeader);
+local m_MegalopolisIM:table = InstanceManager:new("MegalopolisInstance", "ButtonBG", Controls.MegalopolisViewStack);
+local m_MegalopolisTeamIM:table = InstanceManager:new("MegalopolisTeamInstance", "ButtonFrame", Controls.MegalopolisViewStack);
 --MOD\
 
 
@@ -607,6 +656,10 @@ function PopulateTabs()
 
 	if joyousVictoryEnabled then
 		AddTab(TAB_JOYOUS, ViewJoyous);
+	end
+
+	if megalopolisVictoryEnabled then
+		AddTab(TAB_MEGALOPOLIS, ViewMegalopolis);
 	end
 
 	--if(ShouldCheckCustomVictories()) then
@@ -745,6 +798,7 @@ function ResetState(newView:ifunction)
 	Controls.RichesView:SetHide(true);
 	Controls.CharismaView:SetHide(true);
 	Controls.JoyousView:SetHide(true);
+	Controls.MegalopolisView:SetHide(true);
 	--MOD\
 
 	-- Reset tourism lens unless we're now view the Culture tab
@@ -920,6 +974,9 @@ function ViewOverall()
 	end
 	if joyousVictoryEnabled then
 		PopulateOverallInstance(m_OverallIM:GetInstance(), "VICTORY_JOYOUS", "JOYOUS")
+	end
+	if megalopolisVictoryEnabled then
+		PopulateOverallInstance(m_OverallIM:GetInstance(), "VICTORY_MEGALOPOLIS", "MEGALOPOLIS")
 	end
 	--old mod victory handling literally only uses the last argument for a banner color
 	--for row in GameInfo.Victories() do
@@ -3414,6 +3471,264 @@ function RealizeJoyousStackSize()
 	--local textSize:number = Controls.ScienceDetailsButton:GetTextControl():GetSizeX();
 	--Controls.ScienceDetailsButton:SetSizeX(textSize + PADDING_SCORE_DETAILS_BUTTON_WIDTH);
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- ===========================================================================
+--	Called when Megalopolis tab is selected (or when screen re-opens if selected)
+-- ===========================================================================
+function ViewMegalopolis()
+	ResetState(ViewMegalopolis);
+	Controls.MegalopolisView:SetHide(false);
+
+	ChangeActiveHeader("VICTORY_MEGALOPOLIS", m_MegalopolisHeaderIM, Controls.MegalopolisViewHeader);
+	PopulateGenericHeader(RealizeMegalopolisStackSize, MEGALOPOLIS_TITLE, "", MEGALOPOLIS_DETAILS, MEGALOPOLIS_ICON);
+	
+	local totalCost:number = 0;
+	local currentProgress:number = 0;
+	local progressText:string = "";
+	local progressResults:table = { 0 }; -- initialize with 2 elements
+	local finishedProjects:table = { {} };
+	
+	--local bHasSpaceport:boolean = false;
+
+
+	if (g_LocalPlayer ~= nil) then
+
+		--Earnings
+		totalCost = victoryEarningsAmount  
+		if (g_LocalPlayer:GetProperty("MegalopolisVictoryTotalWorthyCities")) then
+			currentProgress = g_LocalPlayer:GetProperty("MegalopolisVictoryTotalWorthyCities");
+		end
+		progressResults[1] = currentProgress / totalCost;
+
+	end
+
+	
+
+
+	--local nextStep:string = "";
+	--for i, result in ipairs(progressResults) do
+	--	if(result < 1) then
+	--		progressText = progressText .. "[ICON_Bolt]";
+	--
+	--	else
+	--		progressText = progressText .. "[ICON_CheckmarkBlue] ";
+	--	end
+	--	progressText = progressText .. RICHES_REQUIREMENTS[i];
+	--
+	--
+	--	if(i < 2) then progressText = progressText .. "[NEWLINE]"; end
+	--end
+
+	--g_activeheader.AdvisorTextCentered:SetText(progressText);
+
+
+	m_MegalopolisIM:ResetInstances();
+	m_MegalopolisTeamIM:ResetInstances();
+
+	
+	local teamIDs = GetAliveMajorTeamIDs();
+	for _, teamID in ipairs(teamIDs) do
+		local team = Teams[teamID];
+		if (team ~= nil) then
+			if #team > 1 then
+				PopulateMegalopolisTeamInstance(m_MegalopolisTeamIM:GetInstance(), teamID);
+			else 
+				local pPlayer = Players[team[1]];
+				if (pPlayer:IsAlive() == true and pPlayer:IsMajor() == true) then
+					PopulateMegalopolisInstance(m_MegalopolisIM:GetInstance(), pPlayer);
+				end
+			end
+		end
+	end
+	
+
+	RealizeMegalopolisStackSize();
+end
+
+
+function PopulateMegalopolisTeamInstance(instance:table, teamID:number)
+
+	PopulateTeamInstanceShared(instance, teamID);
+
+	-- Add team members to player stack
+	if instance.PlayerStackIM == nil then
+		instance.PlayerStackIM = InstanceManager:new("MegalopolisInstance", "ButtonBG", instance.MegalopolisPlayerInstanceStack);
+	end
+
+	instance.PlayerStackIM:ResetInstances();
+
+	local teamProgressData:table = {};
+	for i, playerID in ipairs(Teams[teamID]) do
+		if IsAliveAndMajor(playerID) then
+			local pPlayer:table = Players[playerID];
+			local progressData = PopulateMegalopolisInstance(instance.PlayerStackIM:GetInstance(), pPlayer);
+			if progressData then
+				table.insert(teamProgressData, progressData);
+			end
+		end
+	end
+
+	
+
+	-- Sort team progress data
+	table.sort(teamProgressData, function(a, b)
+		-- Compare stage 1 progress
+		local aScore = a.richesGoalsProgress[1] / victoryEarningsAmount;
+		local bScore = b.richesGoalsProgress[1] / victoryEarningsAmount;
+		if aScore == bScore then
+			return a.playerID < b.playerID;
+		end
+		return aScore > bScore;
+	end);
+
+	-- Populate the team progress with the progress of the furthest player
+	if teamProgressData and #teamProgressData > 0 then
+		PopulateMegalopolisProgressMeters(instance, teamProgressData[1]);
+	end
+
+	
+end
+
+function PopulateMegalopolisInstance(instance:table, pPlayer:table)
+	local playerID:number = pPlayer:GetID();
+	PopulatePlayerInstanceShared(instance, playerID);
+	
+	-- Progress Data to be returned from function
+	local progressData = nil; 
+
+	local megalopolisGoalsTotals = { 0 };
+	local megalopolisGoalsProgress = { 0  };
+	local megalopolisGoalsFinished = { {}  };
+
+	
+	megalopolisGoalsProgress[1] = 0
+	megalopolisGoalsTotals[1] = 0
+	if pPlayer:GetProperty("MegalopolisVictoryTotalWorthyCities") then
+		megalopolisGoalsProgress[1] = pPlayer:GetProperty("MegalopolisVictoryTotalWorthyCities")
+		megalopolisGoalsTotals[1] = pPlayer:GetProperty("MegalopolisVictoryTotalWorthyCities")
+	end
+
+	if megalopolisGoalsProgress[1] > victoryMegaCityAmount then
+		megalopolisGoalsProgress[1] = victoryMegaCityAmount
+	end
+
+
+	
+
+	-- Save data to be returned
+	progressData = {}; --most progress being saved as player variables
+	progressData.megalopolisGoalsTotals = megalopolisGoalsTotals;
+	progressData.megalopolisGoalsProgress = megalopolisGoalsProgress;
+	progressData.megalopolisGoalsFinished = megalopolisGoalsFinished; 
+	progressData.playerID = playerID;
+
+
+	PopulateMegalopolisProgressMeters(instance, progressData);
+
+	return progressData;
+end
+
+function PopulateMegalopolisProgressMeters(instance:table, progressData:table)
+
+	
+	instance.ObjBG_1:SetToolTipString( Locale.Lookup("MEGALOPOLIS_VICTORY_CITIES_TOOLTIP",  victoryMegaCityAmount, victoryMegaPopulationAmount, progressData.megalopolisGoalsTotals[1] ) );
+	
+
+	--Cities
+	local denom1 = victoryMegaCityAmount
+	if denom1 < 1 then
+		denom1 = 1
+		progressData.megalopolisGoalsProgress[1] = 1
+	end
+
+	instance["ObjHidden_" .. 1]:SetHide(true);
+	instance["ObjFill_" .. 1]:SetHide(progressData.megalopolisGoalsProgress[1] == 0);
+	instance["ObjBar_" .. 1]:SetPercent(progressData.megalopolisGoalsProgress[1] / denom1);
+	instance["ObjToggle_ON_" .. 1]:SetHide(progressData.megalopolisGoalsProgress[1] < victoryMegaCityAmount);
+
+
+	
+end
+
+function RealizeMegalopolisStackSize()
+	local _, screenY:number = UIManager:GetScreenSizeVal();
+
+	if(g_activeheader[DATA_FIELD_HEADER_EXPANDED]) then
+		local headerHeight:number = g_activeheader[DATA_FIELD_HEADER_HEIGHT];
+		--headerHeight = headerHeight + g_activeheader.AdvisorTextCentered:GetSizeY() + g_activeheader.AdvisorTextNextStep:GetSizeY() + (PADDING_HEADER * 2);
+		g_activeheader.AdvisorIcon:SetOffsetY(OFFSET_ADVISOR_ICON_Y + headerHeight);
+		g_activeheader.HeaderFrame:SetSizeY(OFFSET_ADVISOR_TEXT_Y + headerHeight);
+		g_activeheader.ContractHeaderButton:SetOffsetY(OFFSET_CONTRACT_BUTTON_Y + headerHeight);
+		Controls.MegalopolisViewContents:SetOffsetY(OFFSET_VIEW_CONTENTS + headerHeight + PADDING_HEADER);
+		Controls.MegalopolisViewScrollbar:SetSizeY(screenY - (SIZE_STACK_DEFAULT + (headerHeight + PADDING_HEADER)));
+		g_activeheader.AdvisorTextCentered:SetHide(false);
+		--g_activeheader.AdvisorTextNextStep:SetHide(false);
+	else
+		Controls.MegalopolisViewContents:SetOffsetY(OFFSET_VIEW_CONTENTS);
+		Controls.MegalopolisViewScrollbar:SetSizeY(screenY - SIZE_STACK_DEFAULT);
+		g_activeheader.AdvisorTextCentered:SetHide(true);
+		--g_activeheader.AdvisorTextNextStep:SetHide(true);
+	end
+
+	RealizeStackAndScrollbar(Controls.MegalopolisViewStack, Controls.MegalopolisViewScrollbar, true);
+
+	--local textSize:number = Controls.ScienceDetailsButton:GetTextControl():GetSizeX();
+	--Controls.ScienceDetailsButton:SetSizeX(textSize + PADDING_SCORE_DETAILS_BUTTON_WIDTH);
+end
+
+
+
+
+
+
+
+
+
+
 
 
 

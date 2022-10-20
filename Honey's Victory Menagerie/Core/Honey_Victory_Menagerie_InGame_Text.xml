@@ -53,6 +53,16 @@
 		</Row>
 
 
+
+		<Row Tag="LOC_WORLD_RANKINGS_MEGALOPOLIS_TAB">
+			<Text>Megalopolic</Text>
+		</Row>
+		<Row Tag="LOC_WORLD_RANKINGS_OVERVIEW_MEGALOPOLIS_CITIES">
+			<Text>Qualifying Cities: {1_cities}/{2_cities_needed}</Text>
+		</Row>
+
+
+
 		<!--private tab-->
 		<Row Tag="LOC_WORLD_RANKINGS_RICHES_VICTORY">
 			<Text>Riches Victory</Text>
@@ -109,7 +119,18 @@
 		<Row Tag="JOYOUS_VICTORY_CONCURRENT_TOOLTIP">
 			<Text>Have the highest [Icon_Amenities] amenity per [Icon_Citizen] citizen ratio for a total of {1_concurrent_turns_needed} turns in a row. This player's current streak is {2_concurrent_current} turns.</Text>
 		</Row>
-		
+
+
+
+		<Row Tag="LOC_WORLD_RANKINGS_MEGALOPOLIS_VICTORY">
+			<Text>Megalopolic Victory</Text>
+		</Row>
+		<Row Tag="LOC_WORLD_RANKINGS_MEGALOPOLIS_DETAILS">
+			<Text>To achieve a [COLOR:ResFavorLabelCS]MEGALOPOLIS[ENDCOLOR] victory, you must occupy at least {1_cities_required} cities, each with a population of at least {2_required_population} [Icon_Citizen] citizens. Progress towards this goal may be lost if a city is captured, razed, or loses population.</Text>
+		</Row>
+		<Row Tag="MEGALOPOLIS_VICTORY_CITIES_TOOLTIP">
+			<Text>Occupy {1_cities_required} cities, each with a population of at least {2_required_population} [Icon_Citizen] citizens. This player has {3_current_recruitment} cities with the required population.</Text>
+		</Row>
 		
 		
 		

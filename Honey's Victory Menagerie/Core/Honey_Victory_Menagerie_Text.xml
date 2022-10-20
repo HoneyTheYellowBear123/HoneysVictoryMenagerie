@@ -69,22 +69,47 @@
 		<Row Tag="LOC_VICTORY_JOYOUS_TEXT" Language="en_US">
 			<Text>A nation is not its culture, nor its military, nor its accomplishments. A nation is its people, and you have ensured that ours are the happiest in the world, regardless of what others may have achieved at the neglect of their own citizens. </Text>
 		</Row>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
+
+
+		<Row Tag="LOC_VICTORY_MEGALOPOLIS_NAME" Language="en_US">
+			<Text>Megalopolis Victory</Text>
+		</Row>
+		<Row Tag="LOC_VICTORY_MEGALOPOLIS_DESCRIPTION" Language="en_US">
+			<Text>Occupy a certain number of cities each with a certain [Icon_Citizen] population.</Text>
+		</Row>
+		<Row Tag="LOC_VICTORY_MEGALOPOLIS_CITIES" Language="en_US">
+			<Text>Cities</Text>
+		</Row>
+		<Row Tag="LOC_VICTORY_MEGALOPOLIS_CITIES_DESCRIPTION" Language="en_US">
+			<Text>How many cities of the apporopriate population size are required to grant this victory.</Text>
+		</Row>
+		<Row Tag="LOC_VICTORY_MEGALOPOLIS_POPULATION" Language="en_US">
+			<Text>Population</Text>
+		</Row>
+		<Row Tag="LOC_VICTORY_MEGALOPOLIS_POPULATION_DESCRIPTION" Language="en_US">
+			<Text>How many [Icon_Citizen] citizens must live in a city for it to count towards the victory.</Text>
+		</Row>
+
+		<Row Tag="LOC_VICTORY_MEGALOPOLIS_TEXT" Language="en_US">
+			<Text>Although prodigious size alone may not dissuade the sharpened blade of time, that has not stopped you from trying. From our humble beginnings you have achieved the proliferation that all life on our planet strives for. </Text>
+		</Row>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	</LocalizedText>
 </GameData>
